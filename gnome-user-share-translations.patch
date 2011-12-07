@@ -1,0 +1,3598 @@
+diff -urN a/po/as.po b/po/as.po
+--- a/po/as.po	2010-05-06 15:58:10.027029543 +0530
++++ b/po/as.po	2010-05-06 15:58:21.827800523 +0530
+@@ -1,16 +1,15 @@
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+ #
+-# Amitakhya Phukan <aphukan@fedoraproject.org>, 2009.
++# Amitakhya Phukan <aphukan@fedoraproject.org>, 2009, 2010.
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: as\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+-"cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-09-19 16:26+0530\n"
+-"Last-Translator: \n"
+-"Language-Team: Assamese <>\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-16 12:16+0530\n"
++"Last-Translator: Amitakhya Phukan <aphukan@fedoraproject.org>\n"
++"Language-Team: American English <fedora-trans-as@redhat.com>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+@@ -59,8 +58,7 @@
+ "\"bonded\", \"bonded_trusted\" and \"ask\"."
+ msgstr ""
+ "ব্লু-টুথেৰ মাধ্যমে উপলব্ধ নথিপত্ৰ কখন গ্ৰহণ কৰা হ'ব । সম্ভাব্য মান হল: \"always "
+-"(সদায়ে)"
+-"\", \"যুক্ত\", \"bonded_যুক্ত আৰু বিশ্বস্ত\" আৰু \"ask (জিজ্ঞাসা)\" ।"
++"(সদায়ে)\", \"যুক্ত\", \"bonded_যুক্ত আৰু বিশ্বস্ত\" আৰু \"ask (জিজ্ঞাসা)\" ।"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:8
+ msgid ""
+@@ -89,9 +87,8 @@
+ "Whether to allow Bluetooth clients to write files, or share the files read-"
+ "only."
+ msgstr ""
+-"ব্লু-টুথ ক্লায়েন্ট দ্বাৰা নথিপত্ৰ লেখা সম্ভব হ'ব না কি অকল পাঠযোগ্য অনুমতি সহ "
+-"নথিপত্ৰৰ যৌথ "
+-"ব্যৱহাৰ কৰা যাবে ।"
++"ব্লু-টুথ ক্লায়েন্ট দ্বাৰা নথিপত্ৰ লেখা সম্ভব হ'ব না কি অকল পাঠযোগ্য অনুমতি সহ নথিপত্ৰৰ "
++"যৌথ ব্যৱহাৰ কৰা যাবে ।"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:13
+ msgid "Whether to allow Bluetooth clients to write files."
+@@ -118,7 +115,6 @@
+ msgstr "দূৰবৰ্তী ডিভাইস দ্বাৰা নথিপত্ৰ মুছে ফেলাৰ অনুমতি প্ৰদান কৰা হ'ব (_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "নথিপত্ৰৰ যৌথ ব্যৱহাৰ সংক্ৰান্ত পছন্দৰ মান"
+ 
+@@ -155,53 +151,75 @@
+ msgstr "যৌথ ব্যৱহাৰেৰ বাবে নেটৱৰ্কেৰ মাধ্যমে সাৰ্বজনীন নথিপত্ৰ উপলব্ধ কৰা হ'ব"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "ব্যক্তিগত নথিপত্ৰৰ যৌথ ব্যৱহাৰ"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "ব্যক্তিগত নথিপত্ৰৰ যৌথ ব্যৱহাৰ সংক্ৰান্ত পছন্দৰ মান"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "সক্ৰিয় থাকিলে, User Sharing আৰম্ভ কৰা হ'ব"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "পছন্দসমূহ আৰম্ভ কৰক"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "ব্যৱক্তিগত নথিপত্ৰৰ যৌথ ব্যৱহাৰ সংক্ৰান্ত পছন্দ আৰম্ভ কৰক"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "ব্যৱক্তিগত নথিপত্ৰৰ যৌথ ব্যৱহাৰ সংক্ৰান্ত পছন্দ আৰম্ভ কৰিবলৈ বিফল"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "আপুনি এই ফোল্ডাৰৰ পৰা নথিপত্ৰক অংশীদাৰ কৰিব পাৰে আৰু ইয়াত নথিপত্ৰ পাবও পাৰে"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "নে'টৱৰ্ক আৰু ব্লু-টুথেৰে আপুনি এই ফোল্ডাৰৰ পৰা নথিপত্ৰক অংশীদাৰ কৰিব পাৰে"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "এই ফোল্ডাৰত আপুনি ব্লু-টুথেৰে নথিপত্ৰ পাব পাৰে"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "বিনা কাৰণে"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "সাহায্যেৰ সূচী প্ৰদৰ্শন কৰা সম্ভব হয়নি ।"
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "ইন্টাৰফেস নিৰ্মাণ কৰতে ব্যৰ্থ ।"
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "কেতিয়াও নহয়"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "নথিপত্ৰ লেখাৰ সময়"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "সদায়ে"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "অকল যুক্ত ডিভাইসেৰ ক্ষেত্ৰে"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "অকল যুক্ত আৰু বিশ্বস্ত ডিভাইসেৰ ক্ষেত্ৰে"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "জিজ্ঞাসা কৰা হ'ব"
+ 
+@@ -231,20 +249,20 @@
+ msgstr "অনুগ্ৰহ কৰে অতিথি ব্যৱহাৰকাৰী ৰূপে লগ-ইন কৰুন"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "ব্লু-টুথেৰ মাধ্যমে আপনি \"%s\" প্ৰাপ্ত কৰেছেন"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "আপনি একটি নথিপত্ৰ প্ৰাপ্ত কৰেছেন"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "নথিপত্ৰ খোলক"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "নথিপত্ৰ প্ৰকাশ কৰা হ'ব"
+ 
+diff -urN a/po/bn_IN.po b/po/bn_IN.po
+--- a/po/bn_IN.po	2010-05-06 15:58:10.021030550 +0530
++++ b/po/bn_IN.po	2010-05-06 15:58:22.212395153 +0530
+@@ -2,13 +2,13 @@
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+ #
+-# Runa Bhattacharjee <runab@redhat.com>, 2009.
++# Runa Bhattacharjee <runab@redhat.com>, 2009, 2010.
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: bn_IN\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-08-28 10:21+0530\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-05 19:36+0530\n"
+ "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
+ "Language-Team: Bengali INDIA <anubad@lists.ankur.org.in>\n"
+ "MIME-Version: 1.0\n"
+@@ -117,7 +117,6 @@
+ msgstr "দূরবর্তী ডিভাইস দ্বারা ফাইল মুছে ফেলার অনুমতি প্রদান করা হবে (_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "ব্যক্তিগত ফাইলের যৌথ ব্যবহার সংক্রান্ত পছন্দসই মান"
+ 
+@@ -154,53 +153,75 @@
+ msgstr "যৌথ ব্যবহারের জন্য নেটওয়ার্কের মাধ্যমে সার্বজনীন ফাইল উপলব্ধ করা হবে"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "ব্যক্তিগত ফাইলের যৌথ ব্যবহার"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "ফাইলের যৌথ ব্যবহার সংক্রান্ত পছন্দসই মান"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "সক্রিয় থাকলে, ব্যক্তিগত ফাইলের যৌথ ব্যবহার আরম্ভ করা হবে"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "পছন্দসই বৈশিষ্ট্য আরম্ভ করা হবে"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "ব্যক্তিগত ফাইলের যৌথ ব্যবহার সংক্রান্ত পছন্দের বৈশিষ্ট্য আরম্ভ করা হবে"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "ব্যক্তিগত ফাইলের যৌথ ব্যবহার সংক্রান্ত পছন্দের বৈশিষ্ট্য আরম্ভ করতে ব্যর্থ"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "এই ফোল্ডারের ফাইল অন্যদের জন্য উপলব্ধ করা যাবে ও এই ফোল্ডারে ফাইল প্রাপ্ত করা যাবে"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "নেটওয়ার্ক ও ব্লু-টুথের মাধ্যমে এই ফোল্ডারের মধ্যে অন্তর্ভুক্ত ফাইল যৌথরূপে ব্যবহার করা যাবে"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "ব্লু-টুথের মাধ্যমে এই ফোল্ডারের মধ্যে ফাইল প্রাপ্ত করা যাবে"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "বিনা কারণে"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "সাহায্যের সূচী প্রদর্শন করা সম্ভব হয়নি।"
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "ইন্টারফেস নির্মাণ করতে ব্যর্থ।"
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "কখনো না"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "ফাইল লেখার সময়"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "সর্বদা"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "শুধুমাত্র Bonded (যুক্ত) ডিভাইসের ক্ষেত্রে"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "শুধুমাত্র Bonded (যুক্ত) ও Trusted (বিশ্বস্ত) ডিভাইসের ক্ষেত্রে"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "জিজ্ঞাসা করা হবে"
+ 
+@@ -230,20 +251,20 @@
+ msgstr "অনুগ্রহ করে guest ব্যবহারকারী রূপে লগ-ইন করুন"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "ব্লু-টুথের মাধ্যমে আপনি \"%s\" প্রাপ্ত করেছেন"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "আপনি একটি ফাইল প্রাপ্ত করেছেন"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "ফাইল খুলুন"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "ফাইল প্রকাশ করা হবে"
+ 
+diff -urN a/po/de.po b/po/de.po
+--- a/po/de.po	2010-05-06 15:58:10.023030023 +0530
++++ b/po/de.po	2010-05-06 15:58:22.564572522 +0530
+@@ -1,24 +1,26 @@
++# translation of de.po to
+ # German translation of gnome-user-share.
+ # Copyright (C) 2005 Alexander Larsson <alexl@redhat.com>
+ # This file is distributed under the same license as the gnome-user-share package.
++#
+ # Frank Arnold <frank@scirocco-5v-turbo.de>, 2005.
+ # Hendrik Richter <hendrikr@gnome.org>, 2007.
+ # Christian Kirbach <Christian.Kirbach@googlemail.com>, 2009.
+ # Mario Blättermann <mariobl@gnome.org>, 2009.
+-#
++# sknirT omiT <moc.tahder@sknirtt>, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+-"user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-09-05 14:07+0100\n"
+-"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
+-"Language-Team: German <gnome-de@gnome.org>\n"
++"Project-Id-Version: de\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-08 11:41+1000\n"
++"Last-Translator: sknirT omiT <moc.tahder@sknirtt>\n"
++"Language-Team:  <de@li.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "Plural-Forms: \n"
++"X-Generator: KBabel 1.11.4\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -91,8 +93,7 @@
+ msgid ""
+ "Whether to allow Bluetooth clients to write files, or share the files read-"
+ "only."
+-msgstr ""
+-"Legt fest, ob Bluetooth-Clients Dateien schreiben oder nur lesen dürfen."
++msgstr "Legt fest, ob Bluetooth-Clients Dateien schreiben oder nur lesen dürfen."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:13
+ msgid "Whether to allow Bluetooth clients to write files."
+@@ -119,7 +120,6 @@
+ msgstr "Entfernten Geräten das Löschen von Dateien _erlauben"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "Einstellungen zur persönlichen Dateifreigabe"
+ 
+@@ -156,53 +156,75 @@
+ msgstr "Öffentlichen Ordner im Netzwerk _freigeben"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "Persönliche Dateifreigabe"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "Einstellungen zur Freigabe von Dateien"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "Persönliche Dateifreigabe starten, wenn aktiv"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "Einstellungen öffnen"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "Einstellungen zur persönlichen Dateifreigabe öffnen"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "Kann Einstellungen zur persönlichen Dateifreigabe nicht öffnen"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "In diesem Ordner können Sie Dateien freigeben und empfangen"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "In diesem Ordner können Sie Dateien via Netzwerk und Bluetooth freigeben"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "In diesem Ordner können Sie Dateien via Blueetooth empfangen"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "Kein Grund"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "Das Hilfedokument konnte nicht angezeigt werden."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "Die Oberfläche konnte nicht erstellt werden."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "Niemals"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "Beim Schreiben von Dateien"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "Immer"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "Nur für verbundene Geräte"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "Nur für verbundene und vertrauenswürdige Geräte"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "Nachfragen"
+ 
+@@ -232,22 +254,20 @@
+ msgstr "Bitte melden Sie sich als Gastbenutzer an"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "Sie haben »%s« über Bluetooth erhalten"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "Sie haben eine Datei erhalten"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "Datei öffnen"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "Datei zeigen"
+ 
+-#~ msgid "User Sharing"
+-#~ msgstr "Benutzerfreigabe"
+diff -urN a/po/es.po b/po/es.po
+--- a/po/es.po	2010-05-06 15:58:10.020029809 +0530
++++ b/po/es.po	2010-05-06 15:58:22.930056035 +0530
+@@ -1,18 +1,18 @@
+-# translation of gnome-user-share.HEAD.po to Español
++# translation of es.po to Spanish
+ # This file is distributed under the same license as the PACKAGE package.
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+ #
+ # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2005, 2006.
+ # Jorge González <jorgegonz@svn.gnome.org>, 200, 2009.
++# Gladys Guerrero  <gguerrer@redhat.com>, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share.HEAD\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+-"user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-06-27 14:54+0200\n"
+-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
+-"Language-Team: Español <gnome-es-list@gnome.org>\n"
++"Project-Id-Version: es\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-07 13:47+1000\n"
++"Last-Translator: Gladys Guerrero  <gguerrer@redhat.com>\n"
++"Language-Team: Spanish <es@li.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+@@ -119,7 +119,6 @@
+ msgstr "_Permitir que los dispositivos remotos borren archivos"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "Preferencias de compartición de archivos personales"
+ 
+@@ -153,56 +152,78 @@
+ 
+ #: ../data/file-share-properties.ui.h:13
+ msgid "_Share public files on network"
+-msgstr "C_ompartir archivos públicos por red"
++msgstr "Compartir archivo_s públicos por red"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "Compartición de archivos personales"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "Preferencias para la compartición de archivos"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "Lanzar la compartición de archivos personales si están activadas"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "Lanzar preferencias"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "Lanzar preferencias para compartir archivos personales"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "No puede lanzar las preferencias para compartir archivos personales"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "Puede compartir archivos desde esta carpeta y recibir archivos para ésta."
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "Puede compartir archivos desde esta carpeta en la red y Bluetooth"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "Puede recibir archivos en Bluetooth en esta carpeta"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "Sin razón"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "No se pudo mostrar el contenido de la ayuda."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "No se pudo construir la interfaz."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "Nunca"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "Al escribir archivos"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "Siempre"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "Sólo para dispositivos vinculados"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "Sólo para dispositivos vinculados y de confianza"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "Preguntar"
+ 
+@@ -232,25 +253,20 @@
+ msgstr "Inicie sesión como usuario invitado"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "Ha recibido «%s» a través de Bluetooth"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "Recibió un archivo"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "Abrir archivo"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "Revelar archivo"
+ 
+-#~ msgid "gtk-help"
+-#~ msgstr "gtk-help"
+-
+-#~ msgid "User Sharing"
+-#~ msgstr "Comparticiones de usuario"
+diff -urN a/po/fr.po b/po/fr.po
+--- a/po/fr.po	2010-05-06 15:58:10.018029402 +0530
++++ b/po/fr.po	2010-05-06 15:58:23.331487414 +0530
+@@ -1,24 +1,26 @@
++# translation of fr.po to French
+ # French translation of gnome-user-share.
+-# Copyright (C) 2005-2009 Free Software Foundation, Inc.
++# Copyright (C) 2005-2009, 2010 Free Software Foundation, Inc.
+ # This file is distributed under the same license as the gnome-user-share package.
+ #
+-# Bieuzent Cyrille <bieuzent@gmail.com>, 2005
+-# Damien Durand <splinux@fedoraproject.org>, 2006
+-# Robert-André Mauchin <zebob.m@pengzone.org>, 2006-2008
+-# Claude Paroz <claude@2xlibre.net>, 2008-2009
+ #
++# Bieuzent Cyrille <bieuzent@gmail.com>, 2005.
++# Damien Durand <splinux@fedoraproject.org>, 2006.
++# Robert-André Mauchin <zebob.m@pengzone.org>, 2006-2008.
++# Claude Paroz <claude@2xlibre.net>, 2008-2009.
++# Corina Roe <croe@redhat.com>, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share HEAD\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+-"user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-08-19 21:14+0200\n"
+-"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+-"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
++"Project-Id-Version: fr\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-15 09:30+1000\n"
++"Last-Translator: Corina Roe <croe@redhat.com>\n"
++"Language-Team: French <i18@redhat.com>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
++"X-Generator: KBabel 1.11.4\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -99,8 +101,7 @@
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:13
+ msgid "Whether to allow Bluetooth clients to write files."
+-msgstr ""
+-"Indique s'il faut autoriser les clients Bluetooth à écrire des fichiers."
++msgstr "Indique s'il faut autoriser les clients Bluetooth à écrire des fichiers."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:14
+ msgid "Whether to notify about newly received files."
+@@ -159,7 +160,7 @@
+ msgstr "_Partager les fichiers publics sur le réseau"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "Partage de fichiers personnels"
+ 
+@@ -171,39 +172,63 @@
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "Lance le partage de fichiers personnels s'il est activé"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "Lancement des préférences"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "Lancement de Préférences du partage de fichiers personnels"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "Impossible de lancer Préférences du partage de fichiers personnels"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "Vous pouvez partager des fichiers à partir de ce dossier et en recevoir à partir également"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "Vous pouvez partager des fichiers de ce dossier sur le réseau et sur Bluetooth"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "Vous pouvez recevoir des fichiers via Bluetooth dans ce dossier"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "Aucune raison"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "Impossible d'afficher le sommaire de l'aide."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "Impossible de construire l'interface."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "Jamais"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "Au moment d'écrire les fichiers"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "Toujours"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "Seulement pour les périphériques liés"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "Seulement pour les périphériques sûrs et liés"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "Demander"
+ 
+@@ -233,19 +258,20 @@
+ msgstr "Veuillez vous connecter en tant qu'utilisateur invité"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "Vous avez reçu « %s » par Bluetooth"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "Vous avez reçu un fichier"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "Ouvrir le fichier"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "Montrer le fichier"
++
+diff -urN a/po/gu.po b/po/gu.po
+--- a/po/gu.po	2010-05-06 15:58:10.018029402 +0530
++++ b/po/gu.po	2010-05-06 15:58:23.766705790 +0530
+@@ -1,15 +1,15 @@
+-# translation of gnome-user-share.master.gu.po to Gujarati
++# translation of gu.po to Gujarati
+ # This file is distributed under the same license as the PACKAGE package.
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+ #
+ # Ankit Patel <ankit@redhat.com>, 2006.
+-# Sweta Kothari <swkothar@redhat.com>, 2009.
++# Sweta Kothari <swkothar@redhat.com>, 2009, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share.master.gu\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-08-25 11:16+0530\n"
++"Project-Id-Version: gu\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-05 13:49+0530\n"
+ "Last-Translator: Sweta Kothari <swkothar@redhat.com>\n"
+ "Language-Team: Gujarati\n"
+ "MIME-Version: 1.0\n"
+@@ -114,7 +114,6 @@
+ msgstr "ફાઇલોને કાઢવા માટે દૂરસ્થ ઉપકરણોની પરવાનગી લો (_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "વ્યક્તિગત ફાઈલ વહેંચણી પસંદગીઓ"
+ 
+@@ -151,53 +150,75 @@
+ msgstr "નેટવર્ક પર જાહેર ફાઈલો વહેંચો (_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "ખાનગી ફાઈલ વહેંચણી"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "ફાઇલોની વહેંચણી માટે પસંદગીઓ"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "વ્યક્તિગત ફાઇલ વહેંચણીને પ્રકાશિત કરો જો સક્રિય હોય તો"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "શરૂ કરવાની પસંદગીઓ"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "વ્યક્તિગત ફાઈલ વહેંચણી પસંદગીઓ ને શરૂ કરો"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "વ્યક્તિગત ફાઈલ વહેંચણી પસંદગીઓને શરૂ કરવામાં અસમર્થ"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "તમે આ ફોલ્ડરમાંથી ફાઇલોને વહેંચી શકો છો અને તેમાં ફાઇલોને મેળવી શકો છો"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "નેટવર્ક અને બ્લુટુથ ઉપર આ ફોલ્ડરમાંથી તમે ફાઇલોને વહેંચી શકો છો"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "તમે આ ફોલ્ડરમાં બ્લુટુથ ઉપર ફાઇલોને મેળવી શકો છો"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "કારણ નથી"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "મદદ સમાવિષ્ટો ને દર્શાવી શકાયુ નહિં."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "ઇન્ટરફેસ ને બિલ્ડ કરી શકાયુ નહિં."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "ક્યારેય નહિં"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "જ્યારે ફાઈલો લખી રહ્યા હોય"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "હંમેશા"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "જોડાયેલ ઉપકરણો માટે ફક્ત"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "જોડાયેલ અને વિશ્ર્વાસપાત્ર ઉપકરણો માટે ફક્ત"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "પૂછો"
+ 
+@@ -227,20 +248,20 @@
+ msgstr "વપરાશકર્તા મહેમાન તરીકે મહેરબાની કરીને પ્રવેશો"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "તમને બ્લુટુથ મારફતે \"%s\" મળેલ છે"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "તમને ફાઇલ મળેલ છે"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "ફાઇલને ખોલો"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "ફાઇલને બતાવો"
+ 
+diff -urN a/po/hi.po b/po/hi.po
+--- a/po/hi.po	2010-05-06 15:58:10.020029809 +0530
++++ b/po/hi.po	2010-05-06 15:58:24.230930128 +0530
+@@ -1,23 +1,24 @@
+-# translation of gnome-user-share.master.po to Hindi
++# translation of hi.po to Hindi
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+ #
+-# Rajesh Ranjan <rranjan@redhat.com>, 2009.
++# Rajesh Ranjan <rranjan@redhat.com>, 2009, 2010.
+ # Rajesh Ranjan <rajesh672@gmail.com>, 2009.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share.master\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-09-16 12:41+0530\n"
+-"Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
+-"Language-Team: Hindi <hindi.sf.net>\n"
++"Project-Id-Version: hi\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-06 16:46+0530\n"
++"Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
++"Language-Team: Hindi <Red Hat>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "X-Generator: KBabel 1.11.4\n"
+ "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+ "\n"
++"\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -110,7 +111,6 @@
+ msgstr "फाइल मिटाने के लिए दूरस्थ युक्ति स्वीकारें (_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "निजी फ़ाइल साझा वरीयता"
+ 
+@@ -147,53 +147,75 @@
+ msgstr "संजाल पर सार्वजनिक फाइल साझा करें (_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "निजी फ़ाइल साझा"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "फाइलों के साझा के लिए वरीयता"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "निजी फ़ाइल साझा लॉन्च करें यदि सक्रिय किया गया है"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "वरीयताएँ लॉन्च करें"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "निजी फ़ाइल साझा वरीयता लॉन्च करें"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "निजी फ़ाइल साझा वरीयता को लॉन्च करने में असमर्थ"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "आप फाइलों को इस फोल्डर से साझा कर सकते हैं और इसमें फाइलें पा सकते हैं"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "आप इस फ़ोल्डर से फाइलों को साझा कर सकते हैं संजाल और ब्लूटूथ के ऊपर"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "आप फाइलों को इस फोल्डर में ब्लूटूथ के ऊपर पा सकते हैं"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "कोई कारण नहीं"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "मदद सामग्री नहीं दिखा सका."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "अंतरफलक नहीं बना सका."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "कभी नहीं"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "फाइल लिखने के दौरान"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "हमेशा"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "केवल बोंडेड युक्ति के लिए"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "केवल बोंडेड व विश्वसनीय युक्ति के लिए"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "पूछें"
+ 
+@@ -223,20 +245,20 @@
+ msgstr "बतौर उपयोक्ता अतिथि कृपया लॉग इन करें"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "आपने \"%s\" ब्लूटूथ से पाया"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "आपने कोई फाइल प्राप्त किया"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "फ़ाइल खोलें"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "फाइल खोलें"
+ 
+diff -urN a/po/it.po b/po/it.po
+--- a/po/it.po	2010-05-06 15:58:10.025031057 +0530
++++ b/po/it.po	2010-05-06 15:58:24.680125452 +0530
+@@ -1,3 +1,4 @@
++# translation of it.po to
+ # Italian translation of gnome-user-share
+ # Copyright (C) 2005, 2006, 2007, 2008, 2009 Free Software Foundation
+ # This file is distributed under the same license as the gnome-user-share package.
+@@ -7,16 +8,16 @@
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share 2.25.91\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+-"user-share&component=general\n"
+-"POT-Creation-Date: 2009-09-02 12:31+0000\n"
+-"PO-Revision-Date: 2009-08-26 18:26+0200\n"
+-"Last-Translator: Gianvito Cavasoli <janvitus@ubuntu-it.org>\n"
+-"Language-Team: Italian <tp@lists.linux.it>\n"
++"Project-Id-Version: it\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-09 09:47+1000\n"
++"Last-Translator: \n"
++"Language-Team:  <it@li.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
++"X-Generator: KBabel 1.11.4\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -76,8 +77,7 @@
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:10
+ msgid "Whether Bluetooth clients can send files using ObexPush."
+-msgstr ""
+-"Indica se i client Bluetooth possono inviare file utilizzando ObexPush."
++msgstr "Indica se i client Bluetooth possono inviare file utilizzando ObexPush."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:11
+ msgid "Whether Bluetooth clients need to pair with the computer to send files."
+@@ -154,7 +154,7 @@
+ msgstr "C_ondividere i file pubblici sulla rete"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "Condivisione di file personali"
+ 
+@@ -166,39 +166,63 @@
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "Lancia la condivisione di file personali se abilitata"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "Lancia preferenze"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "Lancia Preferenze di condivisione di file personali"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "Impossibile lanciare Preferenze di condivisione di file personali"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "È possibile condividere e ricevere i file da questa cartella"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "È possibile condividere i file da questa cartella attraverso la rete e Bluetooth"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "È possibile ricevere i file attraverso Bluetooth in questa cartella"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "Nessun motivo"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "Impossibile visualizzare il sommario della guida."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "Impossibile generare l'interfaccia."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "Mai"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "Quando si scrivono i file"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "Sempre"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "Solo da dispositivi associati"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "Solo da dispositivi associati e fidati"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "Chiedere"
+ 
+@@ -228,19 +252,20 @@
+ msgstr "Accedere come utente ospite"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "Ricevuto «%s» tramite Bluetooth"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "Ricevuto un file"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "Apri file"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "Rivela file"
++
+diff -urN a/po/ja.po b/po/ja.po
+--- a/po/ja.po	2010-05-06 15:58:10.019029898 +0530
++++ b/po/ja.po	2010-05-06 15:58:25.145153487 +0530
+@@ -1,19 +1,21 @@
++# translation of ja.po to
+ # gnome-user-share ja.po.
+-# Copyright (C) 2005,2007-2009 Free Software Foundation, Inc.
++# Copyright (C) 2005,2007-2009, 2010 Free Software Foundation, Inc.
+ # This file is distributed under the same license as the gnome-user-share package.
+ # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2005,2007-2009.
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share gnome-2-28\n"
++"Project-Id-Version: ja\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2009-11-04 22:58+0900\n"
+-"PO-Revision-Date: 2009-11-04 22:58+0900\n"
+-"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+-"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-16 16:44+1000\n"
++"Last-Translator: Takuro Nagamoto\n"
++"Language-Team: \n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
++"X-Generator: KBabel 1.11.4\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -73,8 +75,7 @@
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:10
+ msgid "Whether Bluetooth clients can send files using ObexPush."
+-msgstr ""
+-"Bluetooth のクライアントが ObexPush を使ってファイルを送信できるかどうか"
++msgstr "Bluetooth のクライアントが ObexPush を使ってファイルを送信できるかどうか"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:11
+ msgid "Whether Bluetooth clients need to pair with the computer to send files."
+@@ -151,7 +152,7 @@
+ msgstr "ネットワーク経由でファイルを共有する(_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "個人的なファイルの共有"
+ 
+@@ -163,39 +164,63 @@
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "個人的なファイル共有の機能を起動します (可能ならば)"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "設定の起動"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "個人的なファイル共有の設定の起動"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "個人的なファイル共有の設定を起動できない"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "このフォルダのファイルを共有し、ファイルをフォルダに受け取ることができる"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "このフォルダのファイルをネットワークおよび Bluetooth を介して共有できる"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "Bluetooth を介してファイルをこのフォルダに受け取ることができる"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "原因不明"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "ヘルプを表示できませんでした"
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "インタフェースを構築できませんでした"
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "しない"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "ファイルを書き込む時"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "常に"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "ボンディングしたデバイスのみ"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "ボンディングし信頼のあるデバイスのみ"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "問い合わせる"
+ 
+@@ -241,3 +266,4 @@
+ #: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "ファイルを表示する"
++
+diff -urN a/po/kn.po b/po/kn.po
+--- a/po/kn.po	2010-05-06 15:58:10.018029402 +0530
++++ b/po/kn.po	2010-05-06 15:58:25.565159681 +0530
+@@ -2,19 +2,19 @@
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+ #
+-# Shankar Prasad <svenkate@redhat.com>, 2009.
++# Shankar Prasad <svenkate@redhat.com>, 2009, 2010.
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: gnome-user-share.master.kn\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-09-18 23:30+0530\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-05 19:26+0530\n"
+ "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
+-"Language-Team: Kannada <en@li.org>\n"
++"Language-Team: kn-IN <>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+-"X-Generator: KBabel 1.11.4\n"
++"X-Generator: Lokalize 1.0\n"
+ "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+@@ -114,7 +114,6 @@
+ msgstr "ದೂರಸ್ಥ ಸಾಧನಗಳು ಕಡತಗಳನ್ನು ಅಳಿಸುವುದನ್ನು ಅನುಮತಿಸು(_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "ವೈಯಕ್ತಿಕ ಕಡತ ಹಂಚಿಕೆಯ ಆದ್ಯತೆಗಳು"
+ 
+@@ -151,53 +150,76 @@
+ msgstr "ಸಾರ್ವಜನಿಕೆ ಕಡತಗಳನ್ನು ಜಾಲಬಂಧದಲ್ಲಿ ಹಂಚಿಕೊ(_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "ವೈಯಕ್ತಿಕ ಕಡತ ಹಂಚಿಕೆ"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "ಕಡತಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ಆದ್ಯತೆಗಳು"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "ಶಕ್ತಗೊಂಡಿದ್ದಲ್ಲಿ ವೈಯಕ್ತಿಕ ಕಡತ ಹಂಚಿಕೆಯನ್ನು ಆರಂಭಿಸು"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "ಆದ್ಯತೆಗಳನ್ನು ಆರಂಭಿಸು"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "ವೈಯಕ್ತಿಕ ಕಡತ ಹಂಚಿಕೆಯ ಆದ್ಯತೆಗಳನ್ನು ಆರಂಭಿಸಿ"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "ವೈಯಕ್ತಿಕ ಕಡತ ಹಂಚಿಕೆಯ ಆದ್ಯತೆಗಳನ್ನು ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "ಈ ಕಡತಕೋಶದಿಂದ ನೀವು ಕಡತಗಳನ್ನು ಬೇರೊಬ್ಬರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಬಹುದು ಹಾಗು ಸ್ವೀಕರಿಸಬಹುದು"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr ""
++"ಈ ಕಡತಕೋಶದಿಂದ ನೀವು ಕಡತಗಳನ್ನು ಬೇರೊಬ್ಬರೊಂದಿಗೆ ಜಾಲಬಂಧ ಹಾಗು ಬ್ಲೂಟೂತ್ ಮೂಲಕ ಹಂಚಿಕೊಳ್ಳಬಹುದು"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "ಬ್ಲೂಟೂತ್ ಮೂಲಕ ಈ ಕಡತಕೋಶಕ್ಕೆ ನೀವು ಕಡತಗಳನ್ನು ಸ್ವೀಕರಿಸಬಹುದು"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "ಯಾವುದೆ ಕಾರಣ ಇಲ್ಲ"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "ನೆರವಿನ ವಿಷಯಗಳನ್ನು ತೋರಿಸಲಾಗಲಿಲ್ಲ."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "ಸಂಪರ್ಕಸಾಧನವನ್ನು ನಿರ್ಮಿಸಲಾಗಲಿಲ್ಲ."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "ಎಂದೂ ಬೇಡ"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "ಕಡತಗಳನ್ನು ಬರೆಯುವಾಗ"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "ಯಾವಾಗಲೂ"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "ಕೇವಲ ಬದ್ಧವಾದ ಸಾಧನಗಳಿಂದ ಮಾತ್ರ"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "ಕೇವಲ ಬದ್ಧವಾದ ಹಾಗು ನಂಬಿಕಾರ್ಹ ಸಾಧನಗಳಿಂದ ಮಾತ್ರ"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "ಅನುಮತಿಯನ್ನು ಕೇಳು"
+ 
+@@ -227,20 +249,20 @@
+ msgstr "ದಯವಿಟ್ಟು ಬಳಕೆದಾರ ಅತಿಥಿಯಾಗಿ ಪ್ರವೇಶಿಸಿ"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "ಬ್ಲೂಟೂತ್‌ನ ಮೂಲಕ ನಿಮಗೆ \"%s\" ಬಂದಿದೆ"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "ನೀವು ಕಡತವನ್ನು ಸ್ವೀಕರಿಸಿದ್ದೀರಿ"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "ಕಡತವನ್ನು ತೆರೆ"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "ಕಡತವನ್ನು ತೋರಿಸು"
+ 
+diff -urN a/po/ko.po b/po/ko.po
+--- a/po/ko.po	2010-05-06 15:58:10.023030023 +0530
++++ b/po/ko.po	2010-05-06 15:58:25.974948840 +0530
+@@ -1,21 +1,24 @@
++# translation of ko.po to Korean
+ # gnome-user-share korean translation
+ # This file is distributed under the same license as the gnome-user-share package.
+ #
++#
+ # Young-Ho Cha <ganadist at mizi.com>, 2005, 2007.
+ # Namhyung Kim <namhyung@gmail.com>, 2007.
+ # Changwoo Ryu <cwryu@debian.org>, 2009.
+-#
++# Hyunsok Oh <hoh@redhat.com>, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share\n"
++"Project-Id-Version: ko\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2009-08-29 01:08+0900\n"
+-"PO-Revision-Date: 2009-08-29 01:09+0900\n"
+-"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
+-"Language-Team: GNOME Korea <gnome-kr-hackers@lists.kldp.net>\n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-16 15:10+1000\n"
++"Last-Translator: Hyunsok Oh <hoh@redhat.com>\n"
++"Language-Team: Korean <ko@li.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
++"X-Generator: KBabel 1.11.4\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -37,8 +40,7 @@
+ msgid ""
+ "If this is true, the Public directory in the users home directory will be "
+ "shared over the network when the user is logged in."
+-msgstr ""
+-"참이면, 사용자가 로그인하면 홈 디렉토리의 \"공개\" 디렉터리를 공유합니다."
++msgstr "참이면, 사용자가 로그인하면 홈 디렉토리의 \"공개\" 디렉터리를 공유합니다."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:4
+ msgid "Share Public directory over Bluetooth"
+@@ -64,8 +66,7 @@
+ msgid ""
+ "When to ask for passwords. Possible values are \"never\", \"on_write\", and "
+ "\"always\"."
+-msgstr ""
+-"언제 암호를 물어볼 지 지정. 가능한 값은 \"never\", \"on_write\", \"always\"."
++msgstr "언제 암호를 물어볼 지 지정. 가능한 값은 \"never\", \"on_write\", \"always\"."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:9
+ msgid "When to require passwords"
+@@ -148,7 +149,7 @@
+ msgstr "네트워크를 통해 공개 디렉터리 공유(_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "개인 파일 공유"
+ 
+@@ -160,39 +161,63 @@
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "사용자 공유를 (사용할 경우) 시작합니다"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "기본 설정 시작"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "개인 파일 공유에 대한 기본 설정을 시작합니다"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "개인 파일 공유 기본 설정을 시작할 수 없었습니다"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "이 폴더에서 파일을 공유할 수 있으며, 이 폴더로 파일을 받을 수 있습니다"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "이 폴더로부터 파일을 네트워크나 블루투스를 사용해 공유할 수 있습니다"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "블루투스를 사용해 파일을 이 폴더로 받을 수 있습니다"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "이유 없음"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "도움말 차례를 표시할 수 없습니다."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "인터페이스를 만들 수 없습니다."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "없음"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "파일을 쓸 때만"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "항상"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "연결한 장치만"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "연결하고 신뢰할 수 있는 장치만"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "물어보기"
+ 
+@@ -222,19 +247,20 @@
+ msgstr "guest 사용자로 로그인하십시오"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "블루투스를 통해 \"%s\" 파일을 받았습니다"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "파일을 받았습니다"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "파일 열기"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "파일 보기"
++
+diff -urN a/po/ml.po b/po/ml.po
+--- a/po/ml.po	2010-05-06 15:58:10.022029616 +0530
++++ b/po/ml.po	2010-05-06 15:58:26.475162871 +0530
+@@ -1,3 +1,4 @@
++# translation of ml.po to
+ # translation of gnome-user-share.master.ml.po to
+ # translation of gnome-user-share.HEAD.ml.po to
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+@@ -6,10 +7,10 @@
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share.master.ml\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-09-12 20:25+0530\n"
++"Project-Id-Version: ml\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-08 16:53+0530\n"
+ "Last-Translator: \n"
+ "Language-Team:  <en@li.org>\n"
+ "MIME-Version: 1.0\n"
+@@ -114,7 +115,6 @@
+ msgstr "ഫയലുകള്‍ നീക്കം ചെയ്യുന്നതിനായി റിമോട്ട് ഡിവൈസുകളെ _അനുവദിക്കുക."
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "സ്വകാര്യ ഫയല്‍ പങ്കിടുന്നതിനുള്ള മുന്‍ഗണനകള്‍"
+ 
+@@ -151,53 +151,75 @@
+ msgstr "പബ്ലിക് ഫയലുകള്‍ നെറ്റ്‌വര്‍ക്കില്‍ _പങ്കിടുക"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "സ്വകാര്യ ഫയല്‍ പങ്കിടല്‍"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "ഫയലുകള്‍ പങ്കിടുന്നതിനുള്ള മുന്‍ഗണനകള്‍"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "പ്രവര്‍ത്തന സജ്ജമെങ്കില്‍ സ്വകാര്യ ഫയല്‍ പങ്കിടല്‍ ലഭ്യമാക്കുക"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "മുന്‍ഗണനകള്‍ ലഭ്യമാക്കുക"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "സ്വകാര്യ ഫയല്‍ പങ്കിടുന്നതിനുള്ള മുന്‍ഗണനകള്‍ ലഭ്യമാക്കുക"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "സ്വകാര്യ ഫയല്‍ പങ്കിടുന്നതിനുള്ള മുന്‍ഗണനകള്‍ ലഭ്യമാക്കുവാന്‍ സാധ്യമല്ല"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "ഈ ഫോള്‍ഡറില്‍ നിന്നും നിങ്ങള്‍ക്കു് ഫയലുകള്‍ പങ്കിടുവാനും അതിലേക്കു് അയയ്ക്കുവാനും സാധിക്കുന്നു"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "നെറ്റ്‌വര്‍ക്ക് അല്ലെങ്കില്‍ ബ്ലൂടൂത് വഴി ഈ ഫോള്‍ഡറില്‍ നിന്നും നിങ്ങള്‍ക്കു് ഫയലുകള്‍ പങ്കിടുവാനും സാധിക്കുന്നു"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "ബ്ലൂടൂത് വഴി നിങ്ങള്‍ക്കു് ഈ ഫോള്‍ഡറില്‍ ഫയലുകള്‍ ലഭ്യമാക്കാം"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "കാരണമില്ല"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "സഹായത്തിനുള്ള വിശദാംശങ്ങള്‍ ലഭ്യമാക്കുവാന്‍ സാധിച്ചില്ല."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "ഇന്റര്‍ഫെയിസ് നിര്‍മ്മിക്കുവാന്‍ സാധിച്ചില്ല."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "ഒരിക്കലും വേണ്ട"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "ഫയലുകളിലേക്കു് ഡേറ്റാ സൂക്ഷിക്കുമ്പോള്‍"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "എപ്പോഴും"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "ബോണ്ടഡ് ഡിവൈസുകള്‍ക്കു് മാത്രം ഉള്ളവ"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "ബോണ്ടഡ്, ട്രസ്റ്റഡ് ഡിവൈസുകള്‍ക്കു് മാത്രം ഉള്ളവ"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "ചോദിക്കുക"
+ 
+@@ -227,20 +249,20 @@
+ msgstr "ദയവായി യൂസര്‍ ഗസ്റ്റായി ലോഗിന്‍ ചെയ്യുക"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "നിങ്ങള്‍ക്കു് ബ്ലൂടൂത് വഴി \"%s\" ലഭിച്ചിരിക്കുന്നു."
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "നിങ്ങള്‍ക്കു് ഒരു ഫയല്‍ ലഭിച്ചിരിക്കുന്നു"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "ഫയല്‍ തുറക്കുക"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "ഫയല്‍ കാണിക്കുക"
+ 
+diff -urN a/po/mr.po b/po/mr.po
+--- a/po/mr.po	2010-05-06 15:58:10.021030550 +0530
++++ b/po/mr.po	2010-05-06 15:58:26.871362322 +0530
+@@ -3,15 +3,15 @@
+ # This file is distributed under the same license as the PACKAGE package.
+ #
+ # Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2009.
+-# Sandeep Shedmake <sshedmak@redhat.com>, 2009.
++# Sandeep Shedmake <sshedmak@redhat.com>, 2009, 2010.
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: mr\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-09-12 13:28+0530\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-06 13:50+0530\n"
+ "Last-Translator: Sandeep Shedmake <sshedmak@redhat.com>\n"
+-"Language-Team: Marathi <fedora-trans-mr@redhat.com>\n"
++"Language-Team: Marathi <maajhe-sanganak@freelists.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+@@ -23,7 +23,7 @@
+ "If this is true, Bluetooth devices can send files to the user's Downloads "
+ "directory when logged in."
+ msgstr ""
+-"true असल्यास, प्रवेश केल्यावर Bluetooth साधन वापरकर्त्याचे डाऊनलोड डिरेक्ट्री करीता "
++"खरे असल्यास, प्रवेश केल्यावर Bluetooth साधन वापरकर्त्याचे डाऊनलोड डिरेक्ट्री करीता "
+ "फाइल पाठवू शकते."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:2
+@@ -31,7 +31,7 @@
+ "If this is true, the Public directory in the users home directory will be "
+ "shared over Bluetooth when the user is logged in."
+ msgstr ""
+-"true असल्यास, प्रवेश केल्यावर वापरकर्त्याची मुख्य डिरेक्ट्री अंतर्गत Public डिरेक्ट्री "
++"खरे असल्यास, प्रवेश केल्यावर वापरकर्त्याची मुख्य डिरेक्ट्री अंतर्गत Public डिरेक्ट्री "
+ "Bluetooth वर सहभागीय केले जाईल."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:3
+@@ -39,7 +39,7 @@
+ "If this is true, the Public directory in the users home directory will be "
+ "shared over the network when the user is logged in."
+ msgstr ""
+-"true असल्यास, प्रवेश केल्यावर वापरकर्त्याची मुख्य डिरेक्ट्री अंतर्गत Public डिरेक्ट्री जाळंवर "
++"खरे असल्यास, प्रवेश केल्यावर वापरकर्त्याची मुख्य डिरेक्ट्री अंतर्गत Public डिरेक्ट्री जाळंवर "
+ "सहभागीय केले जाईल."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:4
+@@ -115,7 +115,6 @@
+ msgstr "दूरस्थ साधनला फाइल नष्ट करण्यास परवानगी द्या (_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "व्यक्तिगत फाइल शेअरींग पसंती"
+ 
+@@ -152,53 +151,75 @@
+ msgstr "जाळं वरील public फाइल सहभागीय करा (_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "वैयक्तिक फाइल सहभागीय करा"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "फाइल शेअर करण्यासाठी पसंती"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "कार्यक्षम असल्यास व्यक्तिगत फाइल शेअरींग प्रक्षेपीत करा"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "पसंती सुरू करा"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "व्यक्तिगत फाइल शेअरींग पसंती सुरू करा"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "व्यक्तिगत फाइल शेअरींग पसंती सुरू करणे अशक्य"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "तुम्ही या फोल्डर पासून फाइल्स् शेअर करू शकता, तसेच प्राप्तही करू शकता"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "या फोल्डर पासून फाइल्स् नेटवर्क व ब्ल्युटूथवर शेअर करणे शक्य आहे"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "ब्ल्युटूथ द्वारे या फोल्डरमध्ये फाइल्स् प्राप्त करणे शक्य आहे"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "कारण नाही"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "मदत अंतर्भूत माहिती प्रदर्शित करण्यास अशक्य."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "संवाद बांधणी शक्य नाही."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "कधिच नाही"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "फाइल लिहीतेवेळी"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "नेहमी"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "फक्त बांधणीकृत साधन करीता"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "फक्त बांधणीकृत व विश्वासर्ह साधन करीता"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "विचारा"
+ 
+@@ -228,20 +249,20 @@
+ msgstr "कृपया वापरकर्ता अतिथी नुरूप प्रवेश करा"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "तुमच्याकडे Bluetooth द्वारे \"%s\" प्राप्त झाले"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "तुम्हाला फाइल प्राप्त झाले"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "फाइल उघडा"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "फाइल निश्चित करा"
+ 
+diff -urN a/po/or.po b/po/or.po
+--- a/po/or.po	2010-05-06 15:58:10.023030023 +0530
++++ b/po/or.po	2010-05-06 15:58:27.311070526 +0530
+@@ -1,14 +1,14 @@
+-# translation of gnome-user-share.master.or.po to Oriya
++# translation of or.po to Oriya
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+ #
+-# Manoj Kumar Giri <mgiri@redhat.com>, 2009.
++# Manoj Kumar Giri <mgiri@redhat.com>, 2009, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share.master.or\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-09-17 20:34+0530\n"
++"Project-Id-Version: or\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-08 17:41+0530\n"
+ "Last-Translator: Manoj Kumar Giri <mgiri@redhat.com>\n"
+ "Language-Team: Oriya <oriya-it@googlegroups.com>\n"
+ "MIME-Version: 1.0\n"
+@@ -19,6 +19,7 @@
+ "\n"
+ "\n"
+ "\n"
++"\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -117,7 +118,6 @@
+ msgstr "ସୂଦୂର ଉଫକରଣକୁ ଫାଇଲ ଅପସାରଣ କରିବା ପାଇଁ ଅନୁମତି ଦିଅନ୍ତୁ (_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "ବ୍ୟକ୍ତିଗତ ଫାଇଲ ସହଭାଗ ପସନ୍ଦଗୁଡ଼ିକ"
+ 
+@@ -154,53 +154,75 @@
+ msgstr "ନେଟୱର୍କରେ ସାର୍ବଜନିକ ଫାଇଲଗୁଡ଼ିକୁ ସହଭାଗ କରନ୍ତୁ (_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "ବ୍ୟକ୍ତିଗତ ଫାଇଲ ସହଭାଗ"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "ଫାଇଲଗୁଡ଼ିକୁ ସହଭାଗ କରିବା ପାଇଁ ପସନ୍ଦ"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "ଯଦି ସକ୍ରିୟ ଥାଏ ତେବେ ବ୍ୟକ୍ତିଗତ ଫାଇଲ ସହଭାଗକୁ ଆରମ୍ଭ କରନ୍ତୁ"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "ପସନ୍ଦଗୁଡ଼ିକୁ ଆରମ୍ଭ କରନ୍ତୁ"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "ବ୍ୟକ୍ତିଗତ ଫାଇଲ ସହଭାଗ ପସନ୍ଦଗୁଡ଼ିକୁ ଆରମ୍ଭ କରନ୍ତୁ"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "ବ୍ୟକ୍ତିଗତ ଫାଇଲ ସହଭାଗ ପସନ୍ଦଗୁଡ଼ିକୁ ଆରମ୍ଭ କରିବାରେ ଅସମର୍ଥ"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "ଆପଣ ଏହି ଫୋଲଡରରୁ ଫାଇଲଗୁଡ଼ିକୁ ସହଭାଗ କରିପାରିବେ ଏବଂ ଏଥିରେ ଫାଇଲ ଗ୍ରହଣ କରିପାରିବେ"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "ଆପଣ ଏହି ଫୋଲଡରରୁ ଫାଇଲଗୁଡ଼ିକୁ ନେଟୱର୍କ ଉପରେ ଏବଂ ବ୍ଲୁଟୁଥ ସହାୟତାରେ ସହଭାଗ କରିପାରିବେ"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "ଆପଣ ବ୍ଲୁଟୁଥ ସହାୟତାରେ ଏହି ଫୋଲଡର ମଧ୍ଯକୁ ଫାଇଲ ଗ୍ରହଣ କରିପାରିବେ"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "କୌଣସି କାରଣ ନାହିଁ"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "ସହାୟତା ସୂଚୀକୁ ଦର୍ଶାଇ ହେବ ନାହିଁ।"
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "ଅନ୍ତରାପୃଷ୍ଠ ନିର୍ମାଣ କରିହେବ ନାହିଁ।"
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "କେବେ ନୁହେଁ"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "ଫାଇଲ ଲେଖିବା ସମୟରେ"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "ସର୍ବଦା"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "କେବଳ ବାନ୍ଧିହୋଇଥିବା ଉପକରଣଗୁଡ଼ିକ ପାଇଁ"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "କେବଳ ବାନ୍ଧିହୋଇଥିବା ଏବଂ ବିଶ୍ୱସ୍ଥ ଉପକରଣଗୁଡ଼ିକ ପାଇଁ"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "ପଚାର"
+ 
+@@ -230,20 +252,20 @@
+ msgstr "ଅତିଥି ଚାଳକ ଭାବରେ ଲରଇନ କରନ୍ତୁ"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "ଆପଣ ବ୍ଲୁଟୁଥ ମାଧ୍ଯମରେ \"%s\" କୁ ଗ୍ରହଣ କରିଛନ୍ତି"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "ଆପଣ ଗୋଟିଏ ଫାଇଲ ଗ୍ରହଣ କରିଛନ୍ତି"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "ଫାଇଲକୁ ଖୋଲନ୍ତୁ"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "ଫାଇଲ ପ୍ରକଟକରନ୍ତୁ"
+ 
+diff -urN a/po/pa.po b/po/pa.po
+--- a/po/pa.po	2010-05-06 15:58:10.020029809 +0530
++++ b/po/pa.po	2010-05-06 15:58:28.217126215 +0530
+@@ -4,15 +4,15 @@
+ #
+ # Amanpreet Singh Alam <aalam@users.sf.net>, 2005, 2006, 2009.
+ # A S Alam <aalam@users.sf.net>, 2009.
++# Jaswinder Singh <jsingh@redhat.com>, 2010.
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: gnome-user-share.HEAD\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
+-"cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-09-13 08:39+0530\n"
+-"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+-"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-05 14:28+0530\n"
++"Last-Translator: Jaswinder Singh <jsingh@redhat.com>\n"
++"Language-Team: Punjabi/Panjabi <kde-i18n-doc@kde.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+@@ -112,7 +112,6 @@
+ msgstr "ਰਿਮੋਟ ਜੰਤਰਾਂ ਨੂੰ ਫਾਇਲਾਂ ਹਟਾਉਣ ਦਿਓ(_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "ਨਿੱਜੀ ਫਾਇਲ ਸਾਂਝ ਪਸੰਦ"
+ 
+@@ -149,53 +148,75 @@
+ msgstr "ਨੈੱਟਵਰਕ ਉੱਤੇ ਸਾਂਝੀਆਂ ਪਬਲਿਕ ਫਾਇਲਾਂ(_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "ਨਿੱਜੀ ਫਾਇਲ ਸਾਂਝ"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "ਫਾਇਲਾਂ ਸਾਂਝੀਆਂ ਕਰਨ ਲਈ ਪਸੰਦ"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "ਜੇ ਚਾਲੂ ਹੋਵੇ ਤਾਂ ਨਿੱਜੀ ਫਾਇਲ ਸਾਂਝ ਚਲਾਓ"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "ਪਸੰਦ ਚਲਾਓ"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "ਨਿੱਜੀ ਫਾਇਲ ਸ਼ੇਅਰਿੰਗ ਪਸੰਦ ਚਲਾਓ"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "ਨਿੱਜੀ ਫਾਇਲ ਸਾਂਝ ਪਸੰਦ ਚਲਾਉਣ ਲਈ ਅਸਮਰੱਥ"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "ਤੁਸੀਂ ਇਸ ਫੋਲਡਰ ਤੋਂ ਫਾਇਲਾਂ ਸਾਂਝੀਆਂ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਇਸ ਤੋਂ ਫਾਇਲਾਂ ਲੈ ਸਕਦੇ ਹੋ"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "ਤੁਸੀਂ ਇਹ ਫੋਲਡਰ ਤੋਂ ਫਾਇਲਾਂ ਨੂੰ ਨੈੱਟਵਰਕ ਅਤੇ ਬਲਿਊਟੁੱਥ ਰਾਹੀਂ ਸਾਂਝੀਆਂ ਕਰ ਸਕਦੇ ਹੋ"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "ਤੁਸੀਂ ਬਲਿਊਟੁੱਥ ਰਾਹੀਂ ਫਾਇਲਾਂ ਨੂੰ ਇਸ ਫੋਲਡਰ ਵਿੱਚ ਲੈ ਸਕਦੇ ਹੋ"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "ਕੋਈ ਕਾਰਨ ਨਹੀਂ"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "ਮੱਦਦ ਸਮੱਗਰੀ ਵੇਖਾਈ ਨਹੀਂ ਜਾ ਸਕੀ।"
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "ਬਿਲਡ ਇੰਟਰਫੇਸ ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।"
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "ਕਦੇ ਨਹੀਂ"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "ਫਾਇਲਾਂ ਲਿਖਣ ਸਮੇਂ"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "ਹਮੇਸ਼ਾ"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "ਕੇਵਲ ਬਾਊਂਡ ਕੀਤੇ ਜੰਤਰ ਹੀ"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "ਕੇਵਲ ਬਾਊਂਡ ਅਤੇ ਟਰੱਸਟ ਕੀਤੇ ਜੰਤਰ ਹੀ"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "ਪੁੱਛੋ"
+ 
+@@ -225,20 +246,20 @@
+ msgstr "ਮਹਿਮਾਨ ਯੂਜ਼ਰ ਵਲੋਂ ਲਾਗਇਨ ਕਰੋ ਜੀ"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "ਤੁਸੀਂ ਬਲਿਊਟੁੱਥ ਰਾਹੀਂ \"%s\" ਲਏ"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "ਇੱਕ ਫਾਇਲ ਮਿਲੀ"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "ਫਾਇਲ ਖੋਲ੍ਹੋ"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "ਫਾਇਲ ਰੀਵੀਲ"
+ 
+diff -urN a/po/pt_BR.po b/po/pt_BR.po
+--- a/po/pt_BR.po	2010-05-06 15:58:10.021030550 +0530
++++ b/po/pt_BR.po	2010-05-06 15:58:28.890050356 +0530
+@@ -1,25 +1,27 @@
++# translation of pt_BR.po to Portuguese
+ # Brazilian Portuguese translation of evolution-mapi.
+-# Copyright (C) 2008-2009 Free Software Foundation, Inc.
++# Copyright (C) 2008-2009, 2010 Free Software Foundation, Inc.
+ # This file is distributed under the same license as the evolution-mapi package.
++#
++#
+ # Taylon Silmer <taylonsilva@gmail.com>, 2009.
+ # Fabrício Godoy <skarllot@gmail.com>, 2009.
+ # Djavan Fagundes <dnoway@gmail.com>, 2009.
+ # André Gondim <andregondim@ubuntu.com>, 2009.
+-# Djavan Fagundes <dnoway@gmail.com>, 2009.
+-#
+-#
++# Glaucia Cintra <gcintra@redhat.com>, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share\n"
++"Project-Id-Version: pt_BR\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2009-08-18 21:01-0400\n"
+-"PO-Revision-Date: 2009-08-17 11:51-0300\n"
+-"Last-Translator: Flamarion Jorge <jorge.flamarion@gmail.com>\n"
+-"Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-16 11:06+1000\n"
++"Last-Translator: Glaucia Cintra <gcintra@redhat.com>\n"
++"Language-Team: Portuguese <en@li.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "Plural-Forms: nplurals=2; plural=(n > 1);\n"
++"X-Generator: KBabel 1.11.4\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -83,8 +85,7 @@
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:11
+ msgid "Whether Bluetooth clients need to pair with the computer to send files."
+-msgstr ""
+-"Emparelhar clientes Bluetooth com o computador para enviar arquivos."
++msgstr "Emparelhar clientes Bluetooth com o computador para enviar arquivos."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:12
+ msgid ""
+@@ -155,7 +156,7 @@
+ msgstr "_Compartilhar arquivos públicos na rede"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "Compartilhamento de arquivos pessoais"
+ 
+@@ -167,39 +168,63 @@
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "Lança compartilhamento de arquivos pessoais se habilitado"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "Lançar Preferências"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "Lançar Preferências de compartilhamento de arquivos pessoais"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "Nao foi possivel lançar preferências de compartilhamento de arquivos pessoais"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "Voce pode compartilhar arquivos desta pasta e receber arquivos na mesma."
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "Voce pode compartilhar arquivos desta pasta utilizando a rede e Bluetooth."
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "Voce pode receber arquivos atraves do Bluetooth nesta pasta."
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "Sem razão"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "Não foi possível exibir o conteúdo de ajuda."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "Não foi possível construir a interface."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "Nunca"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "Ao escrever arquivos"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "Sempre"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "Somente para dispositivos emparelhados"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "Somente para dispositivos emparelhados e confiáveis"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "Perguntar"
+ 
+@@ -229,231 +254,20 @@
+ msgstr "Por favor inicie a sessão como usuário convidado"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "Você recebeu \"%s\" pelo Bluetooth"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "Você recebeu um arquivo"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "Abrir arquivo"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "Revelar arquivo"
+ 
+-#~ msgid "Enter Password for %s@%s"
+-#~ msgstr "Digite a senha para %s@%s"
+-
+-#~ msgid "Select username"
+-#~ msgstr "Selecionar nome de usuário"
+-
+-#~ msgid "Full name"
+-#~ msgstr "Nome completo"
+-
+-#~ msgid "User name"
+-#~ msgstr "Nome de usuário"
+-
+-#~ msgid ""
+-#~ "Server, username and domain name cannot be empty. Please fill them with "
+-#~ "correct values."
+-#~ msgstr ""
+-#~ "Servidor, nome de usuário e nome do domínio não podem estar vazios. Por "
+-#~ "favor, preencha-os com os valores corretos."
+-
+-#~ msgid "Authentication finished successfully."
+-#~ msgstr "Autenticação concluída com sucesso."
+-
+-#~ msgid "Authentication failed."
+-#~ msgstr "Falha na autenticação."
+-
+-#~ msgid "_Domain name:"
+-#~ msgstr "Nome de _domínio:"
+-
+-#~ msgid "_Authenticate"
+-#~ msgstr "_Autenticar"
+-
+-#~ msgid "_Location:"
+-#~ msgstr "_Localização:"
+-
+-#~ msgid "_Folder size"
+-#~ msgstr "_Tamanho da pasta"
+-
+-#~ msgid "Folder"
+-#~ msgstr "Pasta"
+-
+-#~ msgid "Size"
+-#~ msgstr "Tamanho"
+-
+-#~ msgid "Unable to retrive folder size information"
+-#~ msgstr "Não é possível recuperar as informações de tamanho da pasta"
+-
+-#~ msgid "Folder Size"
+-#~ msgstr "Tamanho da pasta"
+-
+-#~ msgid "Fetching folder list ..."
+-#~ msgstr "Obtendo lista de pastas ..."
+-
+-#~ msgid "Miscelleneous"
+-#~ msgstr "Diversos"
+-
+-#~ msgid "View the size of all Exchange folders"
+-#~ msgstr "Ver o tamanho de todas as pastas do Exchange"
+-
+-#~ msgid "Folders Size"
+-#~ msgstr "Tamanho das pastas"
+-
+-#~ msgid "Exchange Settings"
+-#~ msgstr "Configurações do Exchange"
+-
+-#~ msgid "Loading items in folder %s"
+-#~ msgstr "Carregando itens na pasta %s"
+-
+-#~ msgid "Error fetching changes from the server."
+-#~ msgstr "Erro ao obter as alterações do servidor."
+-
+-#~ msgid "Could not create cache file"
+-#~ msgstr "Não foi possível criar o arquivo de cache"
+-
+-#~ msgid "Could not create thread for populating cache"
+-#~ msgstr "Não foi possível criar a discussão para preencher o cache"
+-
+-#~ msgid ""
+-#~ "Support for modifying single instances of a recurring appointment is not "
+-#~ "yet implemented. No change was made to the appointment on the server."
+-#~ msgstr ""
+-#~ "O suporte para modificar instâncias únicas de um compromisso recorrente "
+-#~ "ainda não foi implementado. Nenhuma alteração para o compromisso foi "
+-#~ "feita no servidor."
+-
+-#~ msgid "Updating local summary cache for new messages in %s"
+-#~ msgstr ""
+-#~ "Atualizando resumo de informações locais para as novas mensagens em %s"
+-
+-#~ msgid "Retrieving message IDs from server for %s"
+-#~ msgstr "Recuperando IDs das mensagens do servidor para %s"
+-
+-#~ msgid "Removing deleted messages from cache in %s"
+-#~ msgstr "Removendo mensagens deletadas do cache em %s"
+-
+-#~ msgid "This message is not available in offline mode."
+-#~ msgstr "Esta mensagem não está disponível no modo off-line."
+-
+-#~ msgid "Fetching summary information for new messages in %s"
+-#~ msgstr "Extraindo resumo de informações para as novas mensagens em %s"
+-
+-#~ msgid "Fetching items failed"
+-#~ msgstr "Falha ao extrair itens"
+-
+-#~ msgid ""
+-#~ "Cannot get message: %s\n"
+-#~ "  %s"
+-#~ msgstr ""
+-#~ "Não foi possível obter a mensagem: %s\n"
+-#~ "  %s"
+-
+-#~ msgid "No such message"
+-#~ msgstr "Não existe tal mensagem"
+-
+-#~ msgid "Message fetching cancelled by user."
+-#~ msgstr "Extração da mensagem cancelada pelo usuário."
+-
+-#~ msgid "Cannot get message %s: %s"
+-#~ msgstr "Não foi possível obter a mensagem %s: %s"
+-
+-#~ msgid "Could not get message"
+-#~ msgstr "Não foi possível obter a mensagem"
+-
+-#~| msgid "Cannot create new folder `%s'"
+-#~ msgid "Cannot append message to folder '%s'"
+-#~ msgstr "Não foi possível anexar a mensagem à pasta \"%s\""
+-
+-#~ msgid "Offline. '%s'"
+-#~ msgstr "\"%s\" desconectado. "
+-
+-#~ msgid "Could not load summary for %s"
+-#~ msgstr "Não foi possível carregar o resumo para %s"
+-
+-#~ msgid "Checking for new mail"
+-#~ msgstr "Verificando por novas mensagens"
+-
+-#~ msgid "C_heck for new messages in all folders"
+-#~ msgstr "_Verificar por novas mensagens em todas as pastas"
+-
+-#~ msgid "Options"
+-#~ msgstr "Opções"
+-
+-#~ msgid "Automatically synchroni_ze account locally"
+-#~ msgstr "Sincroni_zar automaticamente a conta localmente"
+-
+-#~ msgid "_Apply filters to new messages in Inbox on this server"
+-#~ msgstr ""
+-#~ "_Aplicar filtros às novas mensagens na caixa de entrada deste servidor"
+-
+-#~ msgid "Check new messages for _Junk contents"
+-#~ msgstr "Verificar se as novas mensagens contém _spam"
+-
+-#~ msgid "Only check for Junk messag_es in the Inbox folder"
+-#~ msgstr "Verificar na caixa de entrada se as mensag_ens contém spam"
+-
+-#~ msgid "For accessing Microsoft Exchange / OpenChange servers using MAPI"
+-#~ msgstr "Para acessar servidores Microsoft Exchange / OpenChange usando MAPI"
+-
+-#~ msgid ""
+-#~ "This option will connect to the Openchange server using a plaintext "
+-#~ "password."
+-#~ msgstr ""
+-#~ "Esta opção irá conectar ao servidor Openchange usando uma senha em texto "
+-#~ "puro."
+-
+-#~ msgid "Favorites"
+-#~ msgstr "Favoritos"
+-
+-#~ msgid "All Public Folders"
+-#~ msgstr "Todas as pastas públicas"
+-
+-#~ msgid "Exchange MAPI server %s"
+-#~ msgstr "Servidor Exchange MAPI %s"
+-
+-#~ msgid "Exchange MAPI service for %s on %s"
+-#~ msgstr "Trocar o serviço MAPI para %s em %s"
+-
+-#~ msgid "%s Please enter the MAPI password for %s@%s"
+-#~ msgstr "%s Por favor, digite a senha MAPI para %s@%s"
+-
+-#~ msgid "You did not enter a password."
+-#~ msgstr "Você não digitou uma senha."
+-
+-#~ msgid "Unable to authenticate to Exchange MAPI server."
+-#~ msgstr "Não foi possível autenticar no servidor Exchange MAPI."
+-
+-#~ msgid "Cannot create MAPI folders in offline mode."
+-#~ msgstr "Não é possível criar uma pasta MAPI no modo offline."
+-
+-#~ msgid "Cannot create new folder `%s'"
+-#~ msgstr "Não é possível criar a nova pasta \"%s\""
+-
+-#~ msgid "Cannot rename MAPI folder `%s'. Folder does not exist."
+-#~ msgstr "Não é possível renomear a pasta MAPI \"%s\". A pasta não existe."
+-
+-#~ msgid "Cannot rename MAPI default folder `%s' to `%s'."
+-#~ msgstr "Não é possível renomear a pasta padrão MAPI \"%s\" para \"%s\"."
+-
+-#~ msgid "Cannot rename MAPI folder `%s' to `%s'"
+-#~ msgstr "Não é possível renomear a pasta MAPI \"%s\" para \"%s\""
+-
+-#~ msgid "Folder list not available in offline mode."
+-#~ msgstr "Lista de pastas não disponível no modo offline."
+-
+-#~ msgid "Global Address List / Active Directory"
+-#~ msgstr "Lista Global de Endereços (GAL) / Active Directory"
+-
+-#~ msgid "_Global Catalog server name:"
+-#~ msgstr "Nome do servidor de Catálogo _Global:"
+-
+-#~ msgid "_Limit number of GAL responses: %s"
+-#~ msgstr "_Limitar número de respostas do GAL: %s"
+diff -urN a/po/ru.po b/po/ru.po
+--- a/po/ru.po	2010-05-06 15:58:10.022029616 +0530
++++ b/po/ru.po	2010-05-06 15:58:29.923029101 +0530
+@@ -2,21 +2,20 @@
+ # This file is distributed under the same license as the PACKAGE package.
+ #
+ # Leonid Kanter <leon@asplinux.ru>, 2006.
++# Yulia <ypoyarko@redhat.com>, 2010.
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: ru\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+-"user-share&component=general\n"
+-"POT-Creation-Date: 2009-09-24 13:12+0000\n"
+-"PO-Revision-Date: 2009-10-08 09:56+0300\n"
+-"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
+-"Language-Team:  <gnome-cyr@gnome.org>\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-12 12:49\n"
++"Last-Translator: Yulia <ypoyarko@redhat.com>\n"
++"Language-Team: Russian\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+-"X-Generator: KBabel 1.11.2\n"
+-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
++"X-Generator: KBabel 1.11.4\n"
++"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -44,8 +43,7 @@
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:4
+ msgid "Share Public directory over Bluetooth"
+-msgstr ""
+-"Сделать файлы в каталоге Public общими через для доступа через Bluetooth"
++msgstr "Сделать файлы в каталоге Public общими через для доступа через Bluetooth"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:5
+ msgid "Share Public directory over the network"
+@@ -67,8 +65,7 @@
+ msgid ""
+ "When to ask for passwords. Possible values are \"never\", \"on_write\", and "
+ "\"always\"."
+-msgstr ""
+-"Когда запрашивать пароль. Возможные значения «never», «on_write», и «always»."
++msgstr "Когда запрашивать пароль. Возможные значения «never», «on_write», и «always»."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:9
+ msgid "When to require passwords"
+@@ -80,8 +77,7 @@
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:11
+ msgid "Whether Bluetooth clients need to pair with the computer to send files."
+-msgstr ""
+-"Требовать от клиентов Bluetooth соединения с компьютером для передачи файлов."
++msgstr "Требовать от клиентов Bluetooth соединения с компьютером для передачи файлов."
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:12
+ msgid ""
+@@ -152,7 +148,7 @@
+ msgstr "От_крыть доступ к файлам по сети"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "Общий доступ к личным файлам"
+ 
+@@ -164,39 +160,65 @@
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "Открыть общий доступ к личным файлам, если включено"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "Параметры запуска"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "Открыть параметры общего доступа к личным файлам"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "Не удаётся открыть параметры общего доступа к личным файлам"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "Вы не можете открыть доступ к файлам из этой папки и принимать в неё файлы"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr ""
++"Вы можете сделать файлы из этой папки доступными по сети и протоколу "
++"Bluetooth"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "Вы можете получать файлы по протоколу Bluetooth в эту папку"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "Нет причины"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "Не удалось отобразить справочную информацию."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "Не удалось создать интерфейс пользователя."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "Никогда"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "При записи файлов"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "Всегда"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "Только для подключённых устройств"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "Только для подключённых и доверяемых устройств"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "Спрашивать пользователя"
+ 
+@@ -226,22 +248,20 @@
+ msgstr "Зайдите в систему как гость"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "Через Bluetooth получен файл «%s»"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "Получен файл"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "Открыть файл"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "Показать файл"
+ 
+-#~ msgid "User Sharing"
+-#~ msgstr "Общий доступ к личным файлам"
+diff -urN a/po/ta.po b/po/ta.po
+--- a/po/ta.po	2010-05-06 15:58:10.024029696 +0530
++++ b/po/ta.po	2010-05-06 15:58:30.695333855 +0530
+@@ -4,19 +4,19 @@
+ # This file is distributed under the same license as the PACKAGE package.
+ #
+ # Dr.T.vasudevan <agnihot3@gmail.com>, 2009.
+-# Dr.T.Vasudevan <agnihot3@gmail.com>, 2009.
++# Dr.T.Vasudevan <agnihot3@gmail.com>, 2009, 2010.
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: gnome-user-share.HEAD\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2009-07-18 17:08+0530\n"
+-"PO-Revision-Date: 2009-07-18 17:10+0530\n"
+-"Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
+-"Language-Team: Tamil <Ubuntu-l10n-tam@lists.ubuntu.com>\n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-15 16:13+0530\n"
++"Last-Translator: \n"
++"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+-"X-Generator: Lokalize 0.3\n"
++"X-Generator: Lokalize 1.0\n"
+ "Plural-Forms: nplurals=2; plural=n != 1;\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+@@ -111,7 +111,7 @@
+ 
+ #: ../data/file-share-properties.ui.h:4
+ msgid "Allo_w remote devices to delete files"
+-msgstr "(_w) தொலை சாதனங்களை கோப்புக்களை நீக்க அனுமதி"
++msgstr "தொலை சாதனங்களை கோப்புக்களை நீக்க அனுமதி (_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+ msgid "Personal File Sharing Preferences"
+@@ -119,7 +119,7 @@
+ 
+ #: ../data/file-share-properties.ui.h:6
+ msgid "Receive files in _Downloads folder over Bluetooth"
+-msgstr "(_D) ப்ளூடூத் மூலம் வரும் கோப்புகளை  தரவிறக்கங்கள் அடைவில் பெறுக"
++msgstr "ப்ளூடூத் மூலம் வரும் கோப்புகளை  தரவிறக்கங்கள் அடைவில் பெறுக (_D)"
+ 
+ #: ../data/file-share-properties.ui.h:7
+ msgid "Require re_mote devices to bond with this computer"
+@@ -127,30 +127,30 @@
+ 
+ #: ../data/file-share-properties.ui.h:8
+ msgid "Share public files over _Bluetooth"
+-msgstr "(_B) பொது கோப்புகளை ப்ளூடூத் மூலம் பகிர்க"
++msgstr "பொது கோப்புகளை ப்ளூடூத் மூலம் பகிர்க (_B)"
+ 
+ #: ../data/file-share-properties.ui.h:9
+ msgid "_Accept files: "
+-msgstr "(_A) கோப்புகளை ஏற்றுக்கொள்: "
++msgstr "கோப்புகளை ஏற்றுக்கொள் (_A): "
+ 
+ #: ../data/file-share-properties.ui.h:10
+ msgid "_Notify about received files"
+-msgstr "(_N) பெற்ற  கோப்புகளை பற்றி அறிவி"
++msgstr "பெற்ற கோப்புகளை பற்றி அறிவி (_N)"
+ 
+ #: ../data/file-share-properties.ui.h:11
+ msgid "_Password:"
+-msgstr "(_P) கடவுச்சொல்:"
++msgstr "கடவுச்சொல் (_P):"
+ 
+ #: ../data/file-share-properties.ui.h:12
+ msgid "_Require password:"
+-msgstr "(_R) கடவுச்சொல் தேவை:"
++msgstr "கடவுச்சொல் தேவை (_R):"
+ 
+ #: ../data/file-share-properties.ui.h:13
+ msgid "_Share public files on network"
+-msgstr "(_S) கோப்புகளை வலைப்பின்னல் மூலம் பகிர்க"
++msgstr "கோப்புகளை வலைப்பின்னல் மூலம் பகிர்க (_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "அந்தரங்க கோப்பு பகிர்தல்"
+ 
+@@ -162,39 +162,63 @@
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "செயல் படுத்தி இருந்தால் அந்தரங்க கோப்பு பகிர்தலை  ஆரம்பி "
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "துவக்க முன்னுரிமைகள்"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "துவக்க தனிப்பட்ட கோப்பு பகிர விருப்பங்கள்"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "தனிப்பட்ட கோப்பு பகிர விருப்பங்களை துவக்க முடியவில்லை"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "நீங்கள் இந்த கோப்புறையிலிருந்து கோப்புகளை பெற்று பகிரலாம்"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "நீங்கள் பிணையம் மற்றும் ப்ளூடூத் மூலம் இந்த கோப்புறையிலிருந்து கோப்புகளை பகிரலாம்"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "நீங்கள் ப்ளூடூத் வழியாக இந்த கோப்புறனையில் கோப்புகளை பெறலாம்"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "காரணம் இல்லை"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "உதவி உள்ளடகத்தை காட்ட இயலவில்லை"
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "இடைமுகத்தை உருவாக்க இயலவில்லை"
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "ஒரு போதும் இல்லை"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "கோப்புகளை எழுதும்போது"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "எப்போதும்"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "பிணைத்த சாதனங்களுக்கு மட்டும் "
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "பிணைத்த மற்றும் நம்பப்பட்ட சாதனங்களுக்கு  மட்டும்"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "கேள்"
+ 
+@@ -224,20 +248,20 @@
+ msgstr "தயவு செய்து விருந்தினர் பயனராக உள்நுழை"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr " \"%s\"  ஐ ப்ளூடூத் வழியாக பெற்றீர்கள்"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "நீங்கள் ஒரு கோப்பை பெற்றீர்கள்"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "கோப்பை திறக்கவும்"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "கோப்பை காட்டுக"
+ 
+diff -urN a/po/te.po b/po/te.po
+--- a/po/te.po	2010-05-06 15:58:10.025031057 +0530
++++ b/po/te.po	2010-05-06 15:58:31.403162931 +0530
+@@ -1,14 +1,14 @@
+-# translation of gnome-user-share.master.te.po to Telugu
++# translation of te.po to Telugu
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+ #
+-# Krishna Babu K <kkrothap@redhat.com>, 2009.
++# Krishna Babu K <kkrothap@redhat.com>, 2009, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share.master.te\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-user-share&component=general\n"
+-"POT-Creation-Date: 2009-06-26 10:10+0000\n"
+-"PO-Revision-Date: 2009-09-17 18:00+0530\n"
++"Project-Id-Version: te\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-05 17:20+0530\n"
+ "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+ "Language-Team: Telugu <en@li.org>\n"
+ "MIME-Version: 1.0\n"
+@@ -18,6 +18,7 @@
+ "Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+ "\n"
+ "\n"
++"\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -114,7 +115,6 @@
+ msgstr "దస్త్రములను తొలగించుటకు దూరస్థ పరికరములను అనుమతించుము (_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+-#| msgid "File Sharing Preferences"
+ msgid "Personal File Sharing Preferences"
+ msgstr "వ్యక్తిగత ఫైలు భాగస్వామ్యపు అభీష్టాలు"
+ 
+@@ -151,53 +151,75 @@
+ msgstr "నెట్వర్కునందు పబ్లిక్ దస్త్రములను పంచుకొనుము (_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "వ్యక్తిగత దస్త్ర భాగస్వామ్యం"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+-#| msgid "Preferences for sharing of personal files"
+ msgid "Preferences for sharing of files"
+ msgstr "ఫైళ్ళను భాగస్వామ్యపరచుటకు అభీష్టాలు"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+-#| msgid "Launch User Sharing if enabled"
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "చేతనపరిస్తే వ్యక్తిగత ఫైళ్ళ భాగస్వామ్యమును ఆరంభిస్తుంది"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "అభీష్టాలను ఆరంభించు"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "వ్యక్తిగత ఫైలు భాగస్వామ్యపు అభీష్టాలను ఆరంభించు"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "వ్యక్తిగత ఫైలు భాగస్వామ్యపు అభీష్టాలను ఆరంభించలేదు"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "మీరు యీ ఫోల్డర్‌నుండి ఫైళ్ళను భాగస్వామ్య పరచుకొనవచ్చును మరియు దానికి పైళ్ళను పొందవచ్చును"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "మీరు యీ ఫోల్డర్ నుండి ఫైళ్ళను నెట్వర్కునందు మరియు బ్లూటూత్ నందు భాగస్వామ్యపరచు కొనవచ్చును"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "ఈ ఫోల్డరులోనికి మీరు ఫైళ్ళను బ్లూటూత్ నందు పొందవచ్చును"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "ఏ కారణంలేదు"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "సహాయ సారములను ప్రదర్శించలేక పోయింది."
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "ఇంటర్ఫేస్‌ను నిర్మించలేక పోయింది."
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "ఎప్పటికివద్దు"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "దస్త్రములను వ్రాయుచున్నప్పుడు"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "ఎల్లప్పుడు"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "బందనమేర్పడిన పరికరముల కొరకు మాత్రమే"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "బందనమేర్పడిన మరియు నమ్మిన పరికరములకు మాత్రమే"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "అడుగు"
+ 
+@@ -227,20 +249,20 @@
+ msgstr "దయచేసి అతిధి వినియోగదారిలా లాగిన్ అవ్వండి"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "మీరు \"%s\"ను బ్లూటూత్ ద్వారా పొందినారు"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "మీరు వొక దస్త్రమును పొందినారు"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "దస్త్రాన్ని తెరువుము"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "దస్త్రమును బయటపెట్టుము"
+ 
+diff -urN a/po/zh_CN.po b/po/zh_CN.po
+--- a/po/zh_CN.po	2010-05-06 15:58:10.018029402 +0530
++++ b/po/zh_CN.po	2010-05-06 15:58:31.941546832 +0530
+@@ -1,21 +1,23 @@
++# translation of zh_CN.po to Wei Liu
+ # gnome-user-share的简体中文翻译.
+ # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+ # This file is distributed under the same license as the PACKAGE package.
+-# Funda Wang <fundawang@gmail.com>, 2005, 2009.
+-# 甘露(Gan Lu) <rhythm.gan@gmail.com>, 2009
+ #
++# Funda Wang <fundawang@gmail.com>, 2005, 2009.
++# 甘露(Gan Lu) <rhythm.gan@gmail.com>, 2009.
++# Leah Liu <lliu@redhat.com>, 2010.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share HEAD\n"
+-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+-"user-share&component=general\n"
+-"POT-Creation-Date: 2009-09-02 12:31+0000\n"
+-"PO-Revision-Date: 2009-09-04 17:00+0800\n"
+-"Last-Translator: Hinker <hinkerliu@163.com>\n"
+-"Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
++"Project-Id-Version: zh_CN\n"
++"Report-Msgid-Bugs-To: \n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-10 20:48+1000\n"
++"Last-Translator: Leah Liu <lliu@redhat.com>\n"
++"Language-Team: Wei Liu\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
++"X-Generator: KBabel 1.11.4\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+@@ -140,7 +142,7 @@
+ msgstr "在网络中共享公开文件(_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+ msgstr "个人文件共享"
+ 
+@@ -152,39 +154,63 @@
+ msgid "Launch Personal File Sharing if enabled"
+ msgstr "如果已启用则启动个人文件共享"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "启动首选项"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "启动个人文件共享首选项"
++
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "无法启动个人文件共享首选项"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "您可以共享这个文件夹中的文件并接收文件保存在这个文件夹中"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "您可以通过网络和蓝牙共享这个文件夹"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "您可以通过蓝牙接收文件并保存到这个文件夹中"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "无原因"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "无法显示帮助目录。"
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "无法创建界面。"
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "从不"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "写入文件时"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+ msgstr "总是"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "仅对绑定的设备"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "仅对绑定且信任的设备"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "询问"
+ 
+@@ -214,25 +240,20 @@
+ msgstr "请作为访客登录"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "你通过蓝牙收到了“%s”"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "你收到了一个文件"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "打开文件"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "显示文件"
+ 
+-#~ msgid "gtk-help"
+-#~ msgstr "gtk-help"
+-
+-#~ msgid "User Sharing"
+-#~ msgstr "用户共享"
+diff -urN a/po/zh_TW.po b/po/zh_TW.po
+--- a/po/zh_TW.po	2010-05-06 15:58:10.026030452 +0530
++++ b/po/zh_TW.po	2010-05-06 15:58:32.437575558 +0530
+@@ -1,50 +1,49 @@
+-# Traditional Chinese translation of gnome-user-share.HEAD
+-# Copyright (C) 1999, 2002, 2003 Free Software Foundation, Inc.
++# translation of zh_TW.po to Traditional Chinese
+ # Kevin Tse <kevinkit@netvigator.com>, 2005.
+ # Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>, 2009.
++# Terry Chuang <tchuang at redhat>, 2010.
++# Traditional Chinese translation of gnome-user-share.HEAD
++# Copyright (C) 1999, 2002, 2003, 2010 Free Software Foundation, Inc.
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: gnome-user-share 2.27.0\n"
++"Project-Id-Version: zh_TW\n"
+ "Report-Msgid-Bugs-To: \n"
+-"POT-Creation-Date: 2009-09-06 14:27+0800\n"
+-"PO-Revision-Date: 2009-09-06 08:06+0800\n"
+-"Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
+-"Language-Team: Chinese (traditional)\n"
++"POT-Creation-Date: 2010-03-29 13:25+0530\n"
++"PO-Revision-Date: 2010-04-15 11:20+1000\n"
++"Last-Translator: Terry Chuang <tchuang at redhat>\n"
++"Language-Team: Traditional Chinese <zh_TW@li.org>\n"
+ "MIME-Version: 1.0\n"
+ "Content-Type: text/plain; charset=UTF-8\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ "Language: zh_TW\n"
+ "Plural-Forms: nplurals=1; plural=0;\n"
+-"X-Generator: Virtaal 0.4.0\n"
++"X-Generator: KBabel 1.11.4\n"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:1
+ msgid ""
+ "If this is true, Bluetooth devices can send files to the user's Downloads "
+ "directory when logged in."
+-msgstr ""
+-"如果設定為 true，藍牙裝置就可以在使用者登入時傳送檔案到他的下載目錄中。"
++msgstr "如果設定為 true，藍牙裝置就可以在使用者登入時傳送檔案至該使用者的下載目錄中。"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:2
+ msgid ""
+ "If this is true, the Public directory in the users home directory will be "
+ "shared over Bluetooth when the user is logged in."
+-msgstr ""
+-"如果設定為 true，使用者的家目錄裡之公用目錄會在他/她登入時透過藍牙分享出來。"
++msgstr "如果設定為 true，使用者的家目錄裡之公用目錄會在他/她登入時透過藍牙共享出來。"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:3
+ msgid ""
+ "If this is true, the Public directory in the users home directory will be "
+ "shared over the network when the user is logged in."
+-msgstr ""
+-"如果設定為 true，使用者的家目錄裡之公用目錄會在他/她登入時透過網路分享出來。"
++msgstr "如果設定為 true，使用者的家目錄裡之公用目錄會在他/她登入時透過網路共享出來。"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:4
+ msgid "Share Public directory over Bluetooth"
+-msgstr "以藍牙分享公用目錄"
++msgstr "透過藍牙共享公用目錄"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:5
+ msgid "Share Public directory over the network"
+-msgstr "以網路分享公用目錄"
++msgstr "透過網路共享公用目錄"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:6
+ msgid "When to accept files sent over Bluetooth"
+@@ -84,7 +83,7 @@
+ msgid ""
+ "Whether to allow Bluetooth clients to write files, or share the files read-"
+ "only."
+-msgstr "是否允許藍牙客戶端寫入檔案，或以唯讀方式分享檔案。"
++msgstr "是否允許藍牙客戶端寫入檔案，或以唯讀方式共享檔案。"
+ 
+ #: ../data/desktop_gnome_file_sharing.schemas.in.h:13
+ msgid "Whether to allow Bluetooth clients to write files."
+@@ -100,19 +99,19 @@
+ 
+ #: ../data/file-share-properties.ui.h:2
+ msgid "<b>Share Files over Bluetooth</b>"
+-msgstr "<b>以藍牙分享檔案</b>"
++msgstr "<b>透過藍牙共享檔案</b>"
+ 
+ #: ../data/file-share-properties.ui.h:3
+ msgid "<b>Share Files over the Network</b>"
+-msgstr "<b>以網路分享檔案</b>"
++msgstr "<b>透過網路共享檔案</b>"
+ 
+ #: ../data/file-share-properties.ui.h:4
+ msgid "Allo_w remote devices to delete files"
+-msgstr "允許遠端裝置刪除檔案(_W)"
++msgstr "允許遠端裝置刪除檔案(_w)"
+ 
+ #: ../data/file-share-properties.ui.h:5
+ msgid "Personal File Sharing Preferences"
+-msgstr "個人檔案分享偏好設定"
++msgstr "個人檔案共享偏好設定"
+ 
+ #: ../data/file-share-properties.ui.h:6
+ msgid "Receive files in _Downloads folder over Bluetooth"
+@@ -120,78 +119,102 @@
+ 
+ #: ../data/file-share-properties.ui.h:7
+ msgid "Require re_mote devices to bond with this computer"
+-msgstr "要求遠端裝置與這個電腦繫結(_M)"
++msgstr "要求遠端裝置與這個電腦繫結(_m)"
+ 
+ #: ../data/file-share-properties.ui.h:8
+ msgid "Share public files over _Bluetooth"
+-msgstr "以藍牙分享公用檔案(_B)"
++msgstr "透過藍牙共享公用檔案(_B)"
+ 
+ #: ../data/file-share-properties.ui.h:9
+ msgid "_Accept files: "
+-msgstr "接受檔案(_A):"
++msgstr "接受檔案(_A)："
+ 
+ #: ../data/file-share-properties.ui.h:10
+ msgid "_Notify about received files"
+-msgstr "通知有接收檔案(_N)"
++msgstr "通知已接收檔案(_N)"
+ 
+ #: ../data/file-share-properties.ui.h:11
+ msgid "_Password:"
+-msgstr "密碼(_P):"
++msgstr "密碼(_P)："
+ 
+ #: ../data/file-share-properties.ui.h:12
+ msgid "_Require password:"
+-msgstr "需要密碼(_R):"
++msgstr "需要密碼(_R)："
+ 
+ #: ../data/file-share-properties.ui.h:13
+ msgid "_Share public files on network"
+-msgstr "以網路分享公用檔案(_S)"
++msgstr "透過網路共享公用檔案(_S)"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:1
+-#: ../data/gnome-user-share.desktop.in.in.h:2
++#: ../data/gnome-user-share.desktop.in.in.h:2 ../src/nautilus-share-bar.c:167
+ msgid "Personal File Sharing"
+-msgstr "個人檔案分享"
++msgstr "個人檔案共享"
+ 
+ #: ../data/gnome-user-share-properties.desktop.in.h:2
+ msgid "Preferences for sharing of files"
+-msgstr "用於分享個人檔案的偏好設定"
++msgstr "共享個人檔案的偏好設定"
+ 
+ #: ../data/gnome-user-share.desktop.in.in.h:1
+ msgid "Launch Personal File Sharing if enabled"
+-msgstr "若啟用則執行個人檔案分享"
++msgstr "若啟用則執行個人檔案共享"
++
++#: ../src/nautilus-share-bar.c:179
++msgid "Launch Preferences"
++msgstr "啟動偏好設定"
++
++#: ../src/nautilus-share-bar.c:193
++msgid "Launch Personal File Sharing Preferences"
++msgstr "啟動個人檔案共享偏好設定"
+ 
+-#: ../src/file-share-properties.c:435
++#: ../src/share-extension.c:82
++msgid "Unable to launch the Personal File Sharing preferences"
++msgstr "無法啟動個人檔案共享偏好設定"
++
++#: ../src/share-extension.c:162
++msgid "You can share files from this folder and receive files to it"
++msgstr "您可共享此目錄中的檔案，亦可以此目錄來接收檔案"
++
++#: ../src/share-extension.c:164
++msgid "You can share files from this folder over the network and Bluetooth"
++msgstr "您可透過網路和藍牙共享此目錄中的檔案"
++
++#: ../src/share-extension.c:166
++msgid "You can receive files over Bluetooth into this folder"
++msgstr "您可透過藍牙來以此目錄接收檔案"
++
++#: ../src/file-share-properties.c:436
+ msgid "No reason"
+ msgstr "沒有原因"
+ 
+-#: ../src/file-share-properties.c:463
++#: ../src/file-share-properties.c:464
+ msgid "Could not display the help contents."
+ msgstr "無法顯示求助文件的內容。"
+ 
+-#: ../src/file-share-properties.c:503
++#: ../src/file-share-properties.c:524
+ msgid "Could not build interface."
+ msgstr "無法建立介面。"
+ 
+-#: ../src/file-share-properties.c:543
++#: ../src/file-share-properties.c:566
+ msgid "Never"
+ msgstr "永不"
+ 
+-#: ../src/file-share-properties.c:546
++#: ../src/file-share-properties.c:569
+ msgid "When writing files"
+ msgstr "當寫入至檔案"
+ 
+-#: ../src/file-share-properties.c:549 ../src/file-share-properties.c:572
++#: ../src/file-share-properties.c:572 ../src/file-share-properties.c:595
+ msgid "Always"
+-msgstr "經常"
++msgstr "總是"
+ 
+-#: ../src/file-share-properties.c:575
++#: ../src/file-share-properties.c:598
+ msgid "Only for Bonded devices"
+ msgstr "只充許繫結的裝置"
+ 
+-#: ../src/file-share-properties.c:578
++#: ../src/file-share-properties.c:601
+ msgid "Only for Bonded and Trusted devices"
+ msgstr "只允許繫結與受信任的裝置"
+ 
+-#: ../src/file-share-properties.c:583
++#: ../src/file-share-properties.c:606
+ msgid "Ask"
+ msgstr "詢問"
+ 
+@@ -214,32 +237,27 @@
+ #: ../src/http.c:138
+ #, c-format
+ msgid "%s's public files on %s"
+-msgstr "%s 的公開檔案於 %s"
++msgstr "%s 的公用檔案於 %s"
+ 
+ #: ../src/http.c:372
+ msgid "Please log in as the user guest"
+ msgstr "請以使用者訪客登入"
+ 
+ #. Translators: %s is the name of the filename received
+-#: ../src/obexpush.c:138
++#: ../src/obexpush.c:140
+ #, c-format
+ msgid "You received \"%s\" via Bluetooth"
+ msgstr "您已經透過藍牙接收到「%s」"
+ 
+-#: ../src/obexpush.c:140
++#: ../src/obexpush.c:142
+ msgid "You received a file"
+ msgstr "您已經接收到檔案"
+ 
+-#: ../src/obexpush.c:151
++#: ../src/obexpush.c:153
+ msgid "Open File"
+ msgstr "開啟檔案"
+ 
+-#: ../src/obexpush.c:155
++#: ../src/obexpush.c:157
+ msgid "Reveal File"
+ msgstr "顯示檔案"
+ 
+-#~ msgid "User Sharing"
+-#~ msgstr "使用者分享"
+-
+-#~ msgid "gtk-help"
+-#~ msgstr "gtk-help"

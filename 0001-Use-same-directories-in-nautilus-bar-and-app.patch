@@ -1,0 +1,316 @@
+From 814a647dece14962f878231970cf020f35f382e3 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Tue, 3 Nov 2009 01:54:12 +0000
+Subject: [PATCH] Use same directories in nautilus bar and app
+
+We were using different ways to get the public and downloads dir.
+Whereas the main user-share had fallbacks to avoid sharing $HOME,
+the nautilus bar was using the special dirs without any fallbacks.
+
+This moves the common code to user_share-common.[ch] and makes sure
+that fallbacks are used in both cases.
+---
+ src/Makefile.am         |   16 +++++---
+ src/http.c              |    2 +-
+ src/obexftp.c           |    2 +-
+ src/share-extension.c   |   18 ++++------
+ src/user_share-common.c |   89 +++++++++++++++++++++++++++++++++++++++++++++++
+ src/user_share-common.h |   30 ++++++++++++++++
+ src/user_share.c        |   35 +------------------
+ 7 files changed, 139 insertions(+), 53 deletions(-)
+ create mode 100644 src/user_share-common.c
+ create mode 100644 src/user_share-common.h
+
+diff --git a/src/Makefile.am b/src/Makefile.am
+index fa7aa0a..09e82e3 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -14,6 +14,9 @@ bin_PROGRAMS= \
+ libexec_PROGRAMS= \
+ 	gnome-user-share
+ 
++noinst_LTLIBRARIES = libuser-share-common.la
++libuser_share_common_la_SOURCES = user_share-common.c user_share-common.h
++
+ INCLUDES=	\
+ 	-DPREFIX=\""$(prefix)"\" 			\
+ 	-DBINDIR=\""$(bindir)"\" 			\
+@@ -44,7 +47,8 @@ gnome_user_share_SOURCES =	\
+ 	obexpush.h		\
+ 	$(MARSHALFILES)
+ 
+-gnome_user_share_LDADD = \
++gnome_user_share_LDADD =	\
++	libuser-share-common.la	\
+ 	$(USER_SHARE_LIBS)	\
+ 	$(SELINUX_LIBS)	\
+ 	$(X_LIBS) $(X_PRE_LIBS) -lX11 $(X_EXTRA_LIBS)
+@@ -60,13 +64,13 @@ gnome_file_share_properties_LDADD = \
+ nautilus_extensiondir = $(NAUTILUSDIR)
+ nautilus_extension_LTLIBRARIES = libnautilus-share-extension.la
+ 
+-libnautilus_share_extension_la_SOURCES =         \
+-	nautilus-share-bar.c                     \
+-	nautilus-share-bar.h                     \
+-	share-extension.c                        \
++libnautilus_share_extension_la_SOURCES =	\
++	nautilus-share-bar.c			\
++	nautilus-share-bar.h			\
++	share-extension.c			\
+ 	$(NULL)
+ 
+-libnautilus_share_extension_la_LIBADD = $(EXTENSION_LIBS)
++libnautilus_share_extension_la_LIBADD = libuser-share-common.la $(EXTENSION_LIBS)
+ libnautilus_share_extension_la_LDFLAGS = -avoid-version -module -no-undefined
+ 
+ EXTRA_DIST = marshal.list
+diff --git a/src/http.c b/src/http.c
+index 164b291..367394a 100644
+--- a/src/http.c
++++ b/src/http.c
+@@ -48,7 +48,7 @@
+ #include <selinux/selinux.h>
+ #endif
+ 
+-#include "user_share.h"
++#include "user_share-common.h"
+ #include "user_share-private.h"
+ #include "http.h"
+ 
+diff --git a/src/obexftp.c b/src/obexftp.c
+index 89a98ce..02e8956 100644
+--- a/src/obexftp.c
++++ b/src/obexftp.c
+@@ -30,7 +30,7 @@
+ #include <string.h>
+ 
+ #include "obexftp.h"
+-#include "user_share.h"
++#include "user_share-common.h"
+ #include "user_share-private.h"
+ 
+ static DBusGConnection *connection = NULL;
+diff --git a/src/share-extension.c b/src/share-extension.c
+index 2446d3f..0448414 100644
+--- a/src/share-extension.c
++++ b/src/share-extension.c
+@@ -31,6 +31,7 @@
+ #include <libnautilus-extension/nautilus-location-widget-provider.h>
+ 
+ #include "nautilus-share-bar.h"
++#include "user_share-common.h"
+ 
+ #define NAUTILUS_TYPE_SHARE  (nautilus_share_get_type ())
+ #define NAUTILUS_SHARE(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), NAUTILUS_TYPE_SHARE, NautilusShare))
+@@ -154,18 +155,13 @@ nautilus_share_get_location_widget (NautilusLocationWidgetProvider *iface,
+ 	g_object_unref (home);
+ 
+ 	for (i = 0; i < G_N_ELEMENTS (special_dirs); i++) {
+-		const char *path;
+-
+-		path = g_get_user_special_dir (special_dirs[i]);
+-		if (path != NULL) {
+-			GFile *dir;
+-			dir = g_file_new_for_path (path);
+-			if (g_file_equal (dir, file)) {
+-				enable = TRUE;
+-				is_dir[i] = TRUE;
+-			}
+-			g_object_unref (dir);
++		GFile *dir;
++		dir = lookup_dir_with_fallback (special_dirs[i]);
++		if (g_file_equal (dir, file)) {
++			enable = TRUE;
++			is_dir[i] = TRUE;
+ 		}
++		g_object_unref (dir);
+ 	}
+ 
+ 	if (enable == FALSE)
+diff --git a/src/user_share-common.c b/src/user_share-common.c
+new file mode 100644
+index 0000000..31389eb
+--- /dev/null
++++ b/src/user_share-common.c
+@@ -0,0 +1,89 @@
++/* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*- */
++
++/*
++ *  Copyright (C) 2004-2009 Red Hat, Inc.
++ *
++ *  Nautilus is free software; you can redistribute it and/or
++ *  modify it under the terms of the GNU General Public License as
++ *  published by the Free Software Foundation; either version 2 of the
++ *  License, or (at your option) any later version.
++ *
++ *  Nautilus is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *  General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public License
++ *  along with this program; if not, write to the Free Software
++ *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++ *
++ *  Authors: Alexander Larsson <alexl@redhat.com>
++ *  Bastien Nocera <hadess@hadess.net>
++ *
++ */
++
++#include "user_share-common.h"
++
++static char *
++lookup_special_dir (GUserDirectory directory,
++		    const char *name,
++		    gboolean create_dir)
++{
++	const char *special_dir;
++	char *dir;
++
++	special_dir = g_get_user_special_dir (directory);
++	if (special_dir != NULL && strcmp (special_dir, g_get_home_dir ()) != 0) {
++		if (create_dir != FALSE)
++			g_mkdir_with_parents (special_dir, 0755);
++		return g_strdup (special_dir);
++	}
++
++	dir = g_build_filename (g_get_home_dir (), name, NULL);
++	if (create_dir != FALSE)
++		g_mkdir_with_parents (dir, 0755);
++	return dir;
++}
++
++char *
++lookup_public_dir (void)
++{
++	return lookup_special_dir (G_USER_DIRECTORY_PUBLIC_SHARE,
++				   "Public",
++				   TRUE);
++}
++
++char *
++lookup_download_dir (void)
++{
++	return lookup_special_dir (G_USER_DIRECTORY_DOWNLOAD,
++				   "Downloads",
++				   TRUE);
++}
++
++GFile *
++lookup_dir_with_fallback (GUserDirectory directory)
++{
++	GFile *file;
++	char *path;
++	const char *name;
++
++	if (directory == G_USER_DIRECTORY_PUBLIC_SHARE)
++		name = "Public";
++	else if (directory == G_USER_DIRECTORY_DOWNLOAD)
++		name = "Downloads";
++	else
++		g_assert_not_reached ();
++
++	path = lookup_special_dir (directory,
++				   name,
++				   FALSE);
++
++	if (path == NULL)
++		return NULL;
++
++	file = g_file_new_for_path (path);
++	g_free (path);
++
++	return file;
++}
+diff --git a/src/user_share-common.h b/src/user_share-common.h
+new file mode 100644
+index 0000000..1b87c7c
+--- /dev/null
++++ b/src/user_share-common.h
+@@ -0,0 +1,30 @@
++/* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*- */
++
++/*
++ *  Copyright (C) 2004-2009 Red Hat, Inc.
++ *
++ *  Nautilus is free software; you can redistribute it and/or
++ *  modify it under the terms of the GNU General Public License as
++ *  published by the Free Software Foundation; either version 2 of the
++ *  License, or (at your option) any later version.
++ *
++ *  Nautilus is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *  General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public License
++ *  along with this program; if not, write to the Free Software
++ *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++ *
++ *  Authors: Alexander Larsson <alexl@redhat.com>
++ *  Bastien Nocera <hadess@hadess.net>
++ *
++ */
++
++#include <glib.h>
++#include <gio/gio.h>
++
++char *lookup_public_dir (void);
++char *lookup_download_dir (void);
++GFile *lookup_dir_with_fallback (GUserDirectory directory);
+diff --git a/src/user_share.c b/src/user_share.c
+index ab6a7ca..1976424 100644
+--- a/src/user_share.c
++++ b/src/user_share.c
+@@ -31,6 +31,7 @@
+ 
+ #include "user_share.h"
+ #include "user_share-private.h"
++#include "user_share-common.h"
+ #include "http.h"
+ #include "obexftp.h"
+ #include "obexpush.h"
+@@ -262,40 +263,6 @@ bluez_init (void)
+ 			  G_CALLBACK (default_adapter_changed), NULL);
+ }
+ 
+-char *
+-lookup_public_dir (void)
+-{
+-	const char *public_dir;
+-	char *dir;
+-
+-	public_dir = g_get_user_special_dir (G_USER_DIRECTORY_PUBLIC_SHARE);
+-	if (public_dir != NULL && strcmp (public_dir, g_get_home_dir ()) != 0) {
+-		g_mkdir_with_parents (public_dir, 0755);
+-		return g_strdup (public_dir);
+-	}
+-
+-	dir = g_build_filename (g_get_home_dir (), "Public", NULL);
+-	g_mkdir_with_parents (dir, 0755);
+-	return dir;
+-}
+-
+-char *
+-lookup_download_dir (void)
+-{
+-	const char *download_dir;
+-	char *dir;
+-
+-	download_dir = g_get_user_special_dir (G_USER_DIRECTORY_DOWNLOAD);
+-	if (download_dir != NULL && strcmp (download_dir, g_get_home_dir ()) != 0) {
+-		g_mkdir_with_parents (download_dir, 0755);
+-		return g_strdup (download_dir);
+-	}
+-
+-	dir = g_build_filename (g_get_home_dir (), "Download", NULL);
+-	g_mkdir_with_parents (dir, 0755);
+-	return dir;
+-}
+-
+ static void
+ migrate_old_configuration (void)
+ {
+-- 
+1.6.5.1
+
